@@ -16,7 +16,7 @@ Almost all non-trivial, non-demo Single Page App (SPA) require multiple pages. A
 <meta property="og:site_name" content="未见莫名几许">
 <meta property="og:description" content="一、什么是routing（路由）
 Almost all non-trivial, non-demo Single Page App (SPA) require multiple pages. A settings page is different from a dashboard view. The login page is different from an accounts page（设置">
-<meta property="og:updated_time" content="2017-03-02T09:06:33.128Z">
+<meta property="og:updated_time" content="2017-03-04T11:50:02.802Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Angular路由的定义和使用">
 <meta name="twitter:description" content="一、什么是routing（路由）
@@ -194,8 +194,7 @@ Almost all non-trivial, non-demo Single Page App (SPA) require multiple pages. A
 <p>现在，我们就可以给应用定义路由了。在路由模块里面的.config()方法里面注入了$routeProvider，上面的代码给我们演示了两个用于定义路由的方法。</p>
 <p>when()</p>
 <p>when()方法有两个参数，我们希望匹配的浏览器url和路由操作对象。一般main route经常使用“/”来表示，也可以定义URL参数，在controller里面就使用$routeParams获取url参数。</p>
-<p>templateUrl: 表示路由跳转的view模板</p>
-<p>controller: 控制器</p>
+<p>templateUrl: 表示路由跳转的view模板<br>controller: 控制器</p>
 <blockquote>
 <p>angular.module(‘myApp’, [‘ngRoute’])<br>    .config(function($routeProvider) {<br>      $routeProvider<br>        .when(‘/‘, {<br>          templateUrl: ‘views/main.html’,<br>          controller: ‘MainCtrl’<br>        })<br>        .when(‘/day/:id’, {<br>          templateUrl: ‘views/day.html’,<br>          controller: ‘DayCtrl’<br>        })<br>otherwise()</p>
 </blockquote>
@@ -205,9 +204,10 @@ Almost all non-trivial, non-demo Single Page App (SPA) require multiple pages. A
 </blockquote>
 <p>四、使用</p>
 <p>定义好了路由需要怎么使用呢?我们要告诉angular页面的哪一个部分是我们希望转换的，这需要使用到ng-view指令</p>
-<p><div class="header">My page</div></p>
-<p><div ng-view=""></div><br><span class="footer">A footer</span></p>
-<p>这样就只有<div ng-view=""></div>会被更新， header/footer都始终保持不变</p>
+<blockquote>
+<p>&lt;div class=”header”&amp;gtMy page&lt;/div&gt;<br>&lt;div ng-view&gt;&lt;/div&gt;<br>&lt;span class=”footer”&gt;A footer&lt;/span&gt;”</p>
+</blockquote>
+<p>这样就只有&lt;div ng-view&gt;&lt;/div&gt;会被更新， header/footer都始终保持不变</p>
 
       
 
@@ -306,18 +306,9 @@ Almost all non-trivial, non-demo Single Page App (SPA) require multiple pages. A
   
 <nav id="article-nav">
   
-    <a href="/2015/07/18/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Hello World
-        
-      </div>
-    </a>
   
-  
-    <a href="/2015/07/18/artile2/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Hello World</div>
+    <a href="/2015/07/18/vue/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Vue.js为什么不支持templateUrl模式</div>
       <i class="icon-circle-right"></i>
     </a>
   
