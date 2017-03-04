@@ -6,17 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2015/7 | 未见莫名几许</title>
+  <title>浅谈css的预编译---less语言 | 未见莫名几许</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="I think， therefore I am">
-<meta property="og:type" content="website">
-<meta property="og:title" content="未见莫名几许">
-<meta property="og:url" content="http://yoursite.com/archives/2015/07/index.html">
+  <meta name="description" content="正如各位所知道的一样，css是一门标记性语言，语法相对简单，对使用者的要求也比较低 。不过可乐不知道友友们有没有发现，在使用css的时候需要书写大量看似没有逻辑的代码，不方便维护及扩展，不利于复用，尤其对于一些缺乏css编写经验的猿猿来讲，写出组织良好且易于维护的 CSS 代码是相当困难的一件事情。这个时候呢，可乐悄悄地告诉你们，咱们的程序员蜀黍是无所不能的，针对这个调皮的css，专门开发了les">
+<meta property="og:type" content="article">
+<meta property="og:title" content="浅谈css的预编译---less语言">
+<meta property="og:url" content="http://yoursite.com/2015/07/18/less6/index.html">
 <meta property="og:site_name" content="未见莫名几许">
-<meta property="og:description" content="I think， therefore I am">
+<meta property="og:description" content="正如各位所知道的一样，css是一门标记性语言，语法相对简单，对使用者的要求也比较低 。不过可乐不知道友友们有没有发现，在使用css的时候需要书写大量看似没有逻辑的代码，不方便维护及扩展，不利于复用，尤其对于一些缺乏css编写经验的猿猿来讲，写出组织良好且易于维护的 CSS 代码是相当困难的一件事情。这个时候呢，可乐悄悄地告诉你们，咱们的程序员蜀黍是无所不能的，针对这个调皮的css，专门开发了les">
+<meta property="og:updated_time" content="2017-03-04T15:33:05.465Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="未见莫名几许">
-<meta name="twitter:description" content="I think， therefore I am">
+<meta name="twitter:title" content="浅谈css的预编译---less语言">
+<meta name="twitter:description" content="正如各位所知道的一样，css是一门标记性语言，语法相对简单，对使用者的要求也比较低 。不过可乐不知道友友们有没有发现，在使用css的时候需要书写大量看似没有逻辑的代码，不方便维护及扩展，不利于复用，尤其对于一些缺乏css编写经验的猿猿来讲，写出组织良好且易于维护的 CSS 代码是相当困难的一件事情。这个时候呢，可乐悄悄地告诉你们，咱们的程序员蜀黍是无所不能的，针对这个调皮的css，专门开发了les">
   
     <link rel="alternative" href="/atom.xml" title="未见莫名几许" type="application/atom+xml">
   
@@ -158,292 +159,193 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-less6" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      浅谈css的预编译---less语言
+    </h1>
+  
+
+        
+        <a href="/2015/07/18/less6/" class="archive-article-date">
+  	<time datetime="2015-07-17T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-07-18</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>正如各位所知道的一样，css是一门标记性语言，语法相对简单，对使用者的要求也比较低 。不过可乐不知道友友们有没有发现，在使用css的时候需要书写大量看似没有逻辑的代码，不方便维护及扩展，不利于复用，尤其对于一些缺乏css编写经验的猿猿来讲，写出组织良好且易于维护的 CSS 代码是相当困难的一件事情。这个时候呢，可乐悄悄地告诉你们，咱们的程序员蜀黍是无所不能的，针对这个调皮的css，专门开发了less语言。</p>
+<h2 id="一、less简介："><a href="#一、less简介：" class="headerlink" title="一、less简介："></a>一、less简介：</h2><p>1、less语言是在css的语法基础上，引入了变量，Mixin（混入），运算，以及函数等功能，可以让我们用更少的代码做更多的事情哦！</p>
+<h2 id="二、-less引入（两种方式）："><a href="#二、-less引入（两种方式）：" class="headerlink" title="二、.less引入（两种方式）："></a>二、.less引入（两种方式）：</h2><p>1、客户端使用.less文件： 先要从 <a href="http://lesscss.org" target="_blank" rel="external">http://lesscss.org</a> 下载 less.js 文件，然后在我们需要引入 LESS 源文件的 HTML 中加入如下代码：</p>
+<p>&lt;link rel=”stylesheet/less” type=”text/css” href=”styles.less”&gt;</p>
+<p>注意 ，此处的rel属性值是“ stylesheet/less ”哦。</p>
+<p>还有一点就是： less源文件一定要在less.js引入之前引入 ，才能保证less源文件正确编译解析:</p>
+<p>&lt;script src=”../less.min.js”&gt;&lt;/script&gt;<br>2、在服务器端使用：主要是借助于LESS的编译器，将less源文件编译生成最终的css文件（ 推荐 ）；</p>
+<p>LESS 在服务器端的使用主要是借助于 LESS 的编译器，将 LESS 源文件编译生成最终的 CSS 文件，目前常用的方式是利用 node 的包管理器 (npm) 安装 LESS，安装成功后就可以在 node 环境中对 LESS 源文件进行编译。</p>
+<p>在项目开发初期，我们无论采用客户端还是服务器端的用法，我们都需要想办法将我们要用到的 CSS 或 LESS 文件引入到我们的 HTML 页面或是桥接文件中，LESS 提供了一个我们很熟悉的功能— Importing。我们可以通过这个关键字引入我们需要的 .less 或 .css 文件。 如：</p>
+<p>@import “variables.less”;<br>.less 文件也可以省略后缀名，像这样：</p>
+<p>@import “variables”;<br>引入 CSS 同 LESS 文件一样 ，只是 .css 后缀名不能省略。</p>
+<h2 id="三、-less语法简介："><a href="#三、-less语法简介：" class="headerlink" title="三、.less语法简介："></a>三、.less语法简介：</h2><h2 id="1、变量：一次定义，重复使用："><a href="#1、变量：一次定义，重复使用：" class="headerlink" title="1、变量：一次定义，重复使用："></a>1、变量：一次定义，重复使用：</h2><blockquote>
+<p>@color:#505253;<br>.bg-color{<br>    background-color:@color;<br>}<br>.border-color{<br>    border:1px solid @color;<br>}<br>如上所示： @color 就是可乐刚刚定义的变量，在 .bg-color 和 .border-color 当中都可以使用它</p>
+</blockquote>
+<h2 id="2、混入–Mixins：申明一个类，然后在其它类中调用当前这个类"><a href="#2、混入–Mixins：申明一个类，然后在其它类中调用当前这个类" class="headerlink" title="2、混入–Mixins：申明一个类，然后在其它类中调用当前这个类"></a>2、混入–Mixins：申明一个类，然后在其它类中调用当前这个类</h2><blockquote>
+<p>.roundeCorers(@radius:5px){<br>    -moz-border-radius:@radius;<br>    -webkit-border-radius:@radius;<br>    border-radius:@radius;<br>}</p>
+<p>#header{<br>    .roundeCorers;<br>}</p>
+<p>#footer{<br>    .roundeCorers(10px);<br>}<br>可乐注释一下：其中 @radius 是参数，不穿参数时，默认值为 5px ，如 #header 中的用法。</p>
+</blockquote>
+<h2 id="3-继承"><a href="#3-继承" class="headerlink" title="3.继承"></a>3.继承</h2><p>有一个类用了一组样式，又写了一个类也想用这个样式，可继承上个类的样式，如：</p>
+<p>基础css样式：</p>
+<blockquote>
+<p>.base-style {<br>    font-size: 12px;<br>    color: red;<br>}<br>第一种继承写法：</p>
+<p>.content{<br>    .base-style();<br>    background-color: white;<br>}<br>第二种继承写法：</p>
+<p>.content{<br>    &amp;:extend(.base-style);<br>    background-color: white;<br>}<br>两写法不同，编译后生成的CSS样式也不一样</p>
+</blockquote>
+<p>第一种：</p>
+<blockquote>
+<p>.base-style{<br>    font-size: 12px;<br>    color: red;<br>}<br>.content {<br>    font-size: 12px;<br>    color: red;<br>    background-color: white;<br>}<br>第二种：</p>
+<p>.base-style,<br>.content{<br>    font-size: 12px;<br>    color: red;<br>}<br>.content {<br>    background-color: white;<br>}</p>
+<h2 id="4、嵌套规则："><a href="#4、嵌套规则：" class="headerlink" title="4、嵌套规则："></a>4、嵌套规则：</h2></blockquote>
+<p>html：</p>
+<p>&lt;div id=”header”&gt;<br>    &lt;h1&gt;&lt;a href=””&gt;www.xdpie.com&lt;/a&gt;&lt;/h1&gt;<br>    &lt;p&gt;自游自驾&lt;/p&gt;<br>&lt;/div&gt;<br>LESS：</p>
+<blockquote>
+<p>#header {<br>    display: inline;<br>    float: left;<br>    h1 {<br>    font-size: 26px;<br>    font-weight: bold;<br>    a {<br>        text-decoration: none;<br>        color: #f36;<br>        &amp;:hover {<br>            text-decoration: underline;<br>            color: #63f;<br>            }<br>        }<br>    }<br>    p {<br>        font-size: 12px;<br>    }<br>}</p>
+<h2 id="5、功能和操作："><a href="#5、功能和操作：" class="headerlink" title="5、功能和操作："></a>5、功能和操作：</h2></blockquote>
+<p>可乐给大家一个网址，供大家参考：</p>
+<p><a href="http://less.bootcss.com/functions/" target="_blank" rel="external">http://less.bootcss.com/functions/</a></p>
+<h2 id="6、逻辑控制："><a href="#6、逻辑控制：" class="headerlink" title="6、逻辑控制："></a>6、逻辑控制：</h2><p>LESS是用mixin通过guard的方式支持简单图瓦人分支控制，<br>比如我们要实现一个控制 ::placeholder 样式的 mixin，当传入颜色时只设置颜色，当传入声明块时输出对应的样式规则，其他情况输出一个默认的 color</p>
+<blockquote>
+<p>.mixin(@val) when (iscolor(@val)) {<br>    color: @val;<br>}<br>.mixin(@val) when (isruleset(@val)) {<br>    @val();<br>}<br>.mixin(@val) when (default()) {<br>    color: #666;<br>}</p>
+</blockquote>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/weixin.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2015" class="archive-year">2015</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2015/07/18/angular/" class="archive-article-date">
-  	<time datetime="2015-07-17T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-07-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/07/18/angular/">Angular路由的定义和使用</a>
-    </h1>
-  
+      
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2015/07/18/less6/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2015/07/18/vue/" class="archive-article-date">
-  	<time datetime="2015-07-17T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-07-18</time>
-</a>
-        </div>
-    	 
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/07/18/vue/">Vue.js为什么不支持templateUrl模式</a>
-    </h1>
+    <a href="/2015/07/18/webpack/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Webpack傻瓜式指南
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/07/18/jsjichen5/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">JS实现继承的几种方式</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+
+  
+    <div class="duoshuo"></div>
   
 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2015/07/18/model3/" class="archive-article-date">
-  	<time datetime="2015-07-17T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-07-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/07/18/model3/">JavaScript 模块化入门Ⅰ：理解模块</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2015/07/18/model4/" class="archive-article-date">
-  	<time datetime="2015-07-17T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-07-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/07/18/model4/">JavaScript 模块化入门Ⅱ：模块打包构建</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2015/07/18/webpack/" class="archive-article-date">
-  	<time datetime="2015-07-17T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-07-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/07/18/webpack/">Webpack傻瓜式指南</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2015/07/18/less6/" class="archive-article-date">
-  	<time datetime="2015-07-17T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-07-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/07/18/less6/">浅谈css的预编译---less语言</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2015/07/18/jsjichen5/" class="archive-article-date">
-  	<time datetime="2015-07-17T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-07-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/07/18/jsjichen5/">JS实现继承的几种方式</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2015/07/13/me/" class="archive-article-date">
-  	<time datetime="2015-07-12T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-07-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/07/13/me/">Welcome To My Blog</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2015/07/13/mianshi1/" class="archive-article-date">
-  	<time datetime="2015-07-12T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-07-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/07/13/mianshi1/">前端面试知识点总结</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2015/07/13/gulp/" class="archive-article-date">
-  	<time datetime="2015-07-12T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-07-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/07/13/gulp/">前端构建工具gulp入门教程</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -466,8 +368,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

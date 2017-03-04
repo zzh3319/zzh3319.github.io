@@ -559,6 +559,227 @@
 
 
   
+    <article id="post-less6" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/07/18/less6/">浅谈css的预编译---less语言</a>
+    </h1>
+  
+
+        
+        <a href="/2015/07/18/less6/" class="archive-article-date">
+  	<time datetime="2015-07-17T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-07-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>正如各位所知道的一样，css是一门标记性语言，语法相对简单，对使用者的要求也比较低 。不过可乐不知道友友们有没有发现，在使用css的时候需要书写大量看似没有逻辑的代码，不方便维护及扩展，不利于复用，尤其对于一些缺乏css编写经验的猿猿来讲，写出组织良好且易于维护的 CSS 代码是相当困难的一件事情。这个时候呢，可乐悄悄地告诉你们，咱们的程序员蜀黍是无所不能的，针对这个调皮的css，专门开发了less语言。</p>
+<h2 id="一、less简介："><a href="#一、less简介：" class="headerlink" title="一、less简介："></a>一、less简介：</h2><p>1、less语言是在css的语法基础上，引入了变量，Mixin（混入），运算，以及函数等功能，可以让我们用更少的代码做更多的事情哦！</p>
+<h2 id="二、-less引入（两种方式）："><a href="#二、-less引入（两种方式）：" class="headerlink" title="二、.less引入（两种方式）："></a>二、.less引入（两种方式）：</h2><p>1、客户端使用.less文件： 先要从 <a href="http://lesscss.org" target="_blank" rel="external">http://lesscss.org</a> 下载 less.js 文件，然后在我们需要引入 LESS 源文件的 HTML 中加入如下代码：</p>
+<p>&lt;link rel=”stylesheet/less” type=”text/css” href=”styles.less”&gt;</p>
+<p>注意 ，此处的rel属性值是“ stylesheet/less ”哦。</p>
+<p>还有一点就是： less源文件一定要在less.js引入之前引入 ，才能保证less源文件正确编译解析:</p>
+<p>&lt;script src=”../less.min.js”&gt;&lt;/script&gt;<br>2、在服务器端使用：主要是借助于LESS的编译器，将less源文件编译生成最终的css文件（ 推荐 ）；</p>
+<p>LESS 在服务器端的使用主要是借助于 LESS 的编译器，将 LESS 源文件编译生成最终的 CSS 文件，目前常用的方式是利用 node 的包管理器 (npm) 安装 LESS，安装成功后就可以在 node 环境中对 LESS 源文件进行编译。</p>
+<p>在项目开发初期，我们无论采用客户端还是服务器端的用法，我们都需要想办法将我们要用到的 CSS 或 LESS 文件引入到我们的 HTML 页面或是桥接文件中，LESS 提供了一个我们很熟悉的功能— Importing。我们可以通过这个关键字引入我们需要的 .less 或 .css 文件。 如：</p>
+<p>@import “variables.less”;<br>.less 文件也可以省略后缀名，像这样：</p>
+<p>@import “variables”;<br>引入 CSS 同 LESS 文件一样 ，只是 .css 后缀名不能省略。</p>
+<h2 id="三、-less语法简介："><a href="#三、-less语法简介：" class="headerlink" title="三、.less语法简介："></a>三、.less语法简介：</h2><h2 id="1、变量：一次定义，重复使用："><a href="#1、变量：一次定义，重复使用：" class="headerlink" title="1、变量：一次定义，重复使用："></a>1、变量：一次定义，重复使用：</h2><blockquote>
+<p>@color:#505253;<br>.bg-color{<br>    background-color:@color;<br>}<br>.border-color{<br>    border:1px solid @color;<br>}<br>如上所示： @color 就是可乐刚刚定义的变量，在 .bg-color 和 .border-color 当中都可以使用它</p>
+</blockquote>
+<h2 id="2、混入–Mixins：申明一个类，然后在其它类中调用当前这个类"><a href="#2、混入–Mixins：申明一个类，然后在其它类中调用当前这个类" class="headerlink" title="2、混入–Mixins：申明一个类，然后在其它类中调用当前这个类"></a>2、混入–Mixins：申明一个类，然后在其它类中调用当前这个类</h2><blockquote>
+<p>.roundeCorers(@radius:5px){<br>    -moz-border-radius:@radius;<br>    -webkit-border-radius:@radius;<br>    border-radius:@radius;<br>}</p>
+<p>#header{<br>    .roundeCorers;<br>}</p>
+<p>#footer{<br>    .roundeCorers(10px);<br>}<br>可乐注释一下：其中 @radius 是参数，不穿参数时，默认值为 5px ，如 #header 中的用法。</p>
+</blockquote>
+<h2 id="3-继承"><a href="#3-继承" class="headerlink" title="3.继承"></a>3.继承</h2><p>有一个类用了一组样式，又写了一个类也想用这个样式，可继承上个类的样式，如：</p>
+<p>基础css样式：</p>
+<blockquote>
+<p>.base-style {<br>    font-size: 12px;<br>    color: red;<br>}<br>第一种继承写法：</p>
+<p>.content{<br>    .base-style();<br>    background-color: white;<br>}<br>第二种继承写法：</p>
+<p>.content{<br>    &amp;:extend(.base-style);<br>    background-color: white;<br>}<br>两写法不同，编译后生成的CSS样式也不一样</p>
+</blockquote>
+<p>第一种：</p>
+<blockquote>
+<p>.base-style{<br>    font-size: 12px;<br>    color: red;<br>}<br>.content {<br>    font-size: 12px;<br>    color: red;<br>    background-color: white;<br>}<br>第二种：</p>
+<p>.base-style,<br>.content{<br>    font-size: 12px;<br>    color: red;<br>}<br>.content {<br>    background-color: white;<br>}</p>
+<h2 id="4、嵌套规则："><a href="#4、嵌套规则：" class="headerlink" title="4、嵌套规则："></a>4、嵌套规则：</h2></blockquote>
+<p>html：</p>
+<p>&lt;div id=”header”&gt;<br>    &lt;h1&gt;&lt;a href=””&gt;www.xdpie.com&lt;/a&gt;&lt;/h1&gt;<br>    &lt;p&gt;自游自驾&lt;/p&gt;<br>&lt;/div&gt;<br>LESS：</p>
+<blockquote>
+<p>#header {<br>    display: inline;<br>    float: left;<br>    h1 {<br>    font-size: 26px;<br>    font-weight: bold;<br>    a {<br>        text-decoration: none;<br>        color: #f36;<br>        &amp;:hover {<br>            text-decoration: underline;<br>            color: #63f;<br>            }<br>        }<br>    }<br>    p {<br>        font-size: 12px;<br>    }<br>}</p>
+<h2 id="5、功能和操作："><a href="#5、功能和操作：" class="headerlink" title="5、功能和操作："></a>5、功能和操作：</h2></blockquote>
+<p>可乐给大家一个网址，供大家参考：</p>
+<p><a href="http://less.bootcss.com/functions/" target="_blank" rel="external">http://less.bootcss.com/functions/</a></p>
+<h2 id="6、逻辑控制："><a href="#6、逻辑控制：" class="headerlink" title="6、逻辑控制："></a>6、逻辑控制：</h2><p>LESS是用mixin通过guard的方式支持简单图瓦人分支控制，<br>比如我们要实现一个控制 ::placeholder 样式的 mixin，当传入颜色时只设置颜色，当传入声明块时输出对应的样式规则，其他情况输出一个默认的 color</p>
+<blockquote>
+<p>.mixin(@val) when (iscolor(@val)) {<br>    color: @val;<br>}<br>.mixin(@val) when (isruleset(@val)) {<br>    @val();<br>}<br>.mixin(@val) when (default()) {<br>    color: #666;<br>}</p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2015/07/18/less6/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-jsjichen5" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/07/18/jsjichen5/">JS实现继承的几种方式</a>
+    </h1>
+  
+
+        
+        <a href="/2015/07/18/jsjichen5/" class="archive-article-date">
+  	<time datetime="2015-07-17T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-07-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>前言</p>
+<p>JS作为面向对象的弱类型语言，继承也是其非常强大的特性之一。那么如何在JS中实现继承呢？让我们拭目以待。</p>
+<p>JS继承的实现方式<br>既然要实现继承，那么首先我们得有一个父类，代码如下：</p>
+<p>// 定义一个动物类</p>
+<blockquote>
+<p>function Animal (name) {<br>  // 属性<br>  this.name = name || ‘Animal’;<br>  // 实例方法<br>  this.sleep = function(){<br>    console.log(this.name + ‘正在睡觉！’);<br>  }<br>}<br>// 原型方法<br>Animal.prototype.eat = function(food) {<br>  console.log(this.name + ‘正在吃：’ + food);<br>};</p>
+<h2 id="1、原型链继承"><a href="#1、原型链继承" class="headerlink" title="1、原型链继承"></a>1、原型链继承</h2></blockquote>
+<p>核心： 将父类的实例作为子类的原型</p>
+<blockquote>
+<p>function Cat(){<br>}<br>Cat.prototype = new Animal();<br>Cat.prototype.name = ‘cat’;</p>
+</blockquote>
+<p>//　Test Code</p>
+<blockquote>
+<p>var cat = new Cat();<br>console.log(cat.name);<br>console.log(cat.eat(‘fish’));<br>console.log(cat.sleep());<br>console.log(cat instanceof Animal); //true<br>console.log(cat instanceof Cat); //true<br>特点：</p>
+</blockquote>
+<p>非常纯粹的继承关系，实例是子类的实例，也是父类的实例<br>父类新增原型方法/原型属性，子类都能访问到<br>简单，易于实现<br>缺点：</p>
+<p>要想为子类新增属性和方法，必须要在new Animal()这样的语句之后执行，不能放到构造器中<br>无法实现多继承<br>来自原型对象的引用属性是所有实例共享的（详细请看附录代码： 示例1）<br>创建子类实例时，无法向父类构造函数传参<br>推荐指数：★★（3、4两大致命缺陷）</p>
+<h2 id="2、构造继承"><a href="#2、构造继承" class="headerlink" title="2、构造继承"></a>2、构造继承</h2><p>核心：使用父类的构造函数来增强子类实例，等于是复制父类的实例属性给子类（没用到原型）</p>
+<blockquote>
+<p>function Cat(name){<br>  Animal.call(this);<br>  this.name = name || ‘Tom’;<br>}</p>
+</blockquote>
+<p>// Test Code</p>
+<blockquote>
+<p>var cat = new Cat();<br>console.log(cat.name);<br>console.log(cat.sleep());<br>console.log(cat instanceof Animal); // false<br>console.log(cat instanceof Cat); // true<br>特点：</p>
+</blockquote>
+<p>解决了1中，子类实例共享父类引用属性的问题<br>创建子类实例时，可以向父类传递参数<br>可以实现多继承（call多个父类对象）<br>缺点：</p>
+<p>实例并不是父类的实例，只是子类的实例<br>只能继承父类的实例属性和方法，不能继承原型属性/方法<br>无法实现函数复用，每个子类都有父类实例函数的副本，影响性能<br>推荐指数：★★（缺点3）</p>
+<h2 id="3、实例继承"><a href="#3、实例继承" class="headerlink" title="3、实例继承"></a>3、实例继承</h2><p>核心：为父类实例添加新特性，作为子类实例返回</p>
+<blockquote>
+<p>function Cat(name){<br>  var instance = new Animal();<br>  instance.name = name || ‘Tom’;<br>  return instance;<br>}</p>
+</blockquote>
+<p>// Test Code</p>
+<blockquote>
+<p>var cat = new Cat();<br>console.log(cat.name);<br>console.log(cat.sleep());<br>console.log(cat instanceof Animal); // true<br>console.log(cat instanceof Cat); // false<br>特点：</p>
+</blockquote>
+<p>不限制调用方式，不管是new 子类()还是子类(),返回的对象具有相同的效果<br>缺点：</p>
+<p>实例是父类的实例，不是子类的实例<br>不支持多继承<br>推荐指数：★★</p>
+<h2 id="4、拷贝继承"><a href="#4、拷贝继承" class="headerlink" title="4、拷贝继承"></a>4、拷贝继承</h2><blockquote>
+<p>function Cat(name){<br>  var animal = new Animal();<br>  for(var p in animal){<br>    Cat.prototype[p] = animal[p];<br>  }<br>  Cat.prototype.name = name || ‘Tom’;<br>}</p>
+</blockquote>
+<p>// Test Code</p>
+<blockquote>
+<p>var cat = new Cat();<br>console.log(cat.name);<br>console.log(cat.sleep());<br>console.log(cat instanceof Animal); // false<br>console.log(cat instanceof Cat); // true<br>特点：</p>
+</blockquote>
+<p>支持多继承<br>缺点：</p>
+<p>效率较低，内存占用高（因为要拷贝父类的属性）<br>无法获取父类不可枚举的方法（不可枚举方法，不能使用for in 访问到）<br>推荐指数：★（缺点1）</p>
+<h2 id="5、组合继承"><a href="#5、组合继承" class="headerlink" title="5、组合继承"></a>5、组合继承</h2><p>核心：通过调用父类构造，继承父类的属性并保留传参的优点，然后通过将父类实例作为子类原型，实现函数复用</p>
+<blockquote>
+<p>function Cat(name){<br>  Animal.call(this);<br>  this.name = name || ‘Tom’;<br>}<br>Cat.prototype = new Animal();</p>
+</blockquote>
+<p>// Test Code</p>
+<blockquote>
+<p>var cat = new Cat();<br>console.log(cat.name);<br>console.log(cat.sleep());<br>console.log(cat instanceof Animal); // true<br>console.log(cat instanceof Cat); // true<br>特点：</p>
+</blockquote>
+<p>弥补了方式2的缺陷，可以继承实例属性/方法，也可以继承原型属性/方法<br>既是子类的实例，也是父类的实例<br>不存在引用属性共享问题<br>可传参<br>函数可复用<br>缺点：</p>
+<p>调用了两次父类构造函数，生成了两份实例（子类实例将子类原型上的那份屏蔽了）<br>推荐指数：★★★★（仅仅多消耗了一点内存）</p>
+<h2 id="6、寄生组合继承"><a href="#6、寄生组合继承" class="headerlink" title="6、寄生组合继承"></a>6、寄生组合继承</h2><p>核心：通过寄生方式，砍掉父类的实例属性，这样，在调用两次父类的构造的时候，就不会初始化两次实例方法/属性，避免的组合继承的缺点</p>
+<blockquote>
+<p>function Cat(name){<br>  Animal.call(this);<br>  this.name = name || ‘Tom’;<br>}<br>(function(){<br>  // 创建一个没有实例方法的类<br>  var Super = function(){};<br>  Super.prototype = Animal.prototype;<br>  //将实例作为子类的原型<br>  Cat.prototype = new Super();<br>})();</p>
+</blockquote>
+<p>// Test Code</p>
+<blockquote>
+<p>var cat = new Cat();<br>console.log(cat.name);<br>console.log(cat.sleep());<br>console.log(cat instanceof Animal); // true<br>console.log(cat instanceof Cat); //true<br>特点：</p>
+</blockquote>
+<p>堪称完美<br>缺点：</p>
+<p>实现较为复杂<br>推荐指数：★★★★（实现复杂，扣掉一颗星）</p>
+<p>附录代码：<br>示例一：</p>
+<blockquote>
+<p>function Animal (name) {<br>  // 属性<br>  this.name = name || ‘Animal’;<br>  // 实例方法<br>  this.sleep = function(){<br>    console.log(this.name + ‘正在睡觉！’);<br>  }<br>  //实例引用属性<br>  this.features = [];<br>}<br>function Cat(name){<br>}<br>Cat.prototype = new Animal();</p>
+<p>var tom = new Cat(‘Tom’);<br>var kissy = new Cat(‘Kissy’);</p>
+<p>console.log(tom.name); // “Animal”<br>console.log(kissy.name); // “Animal”<br>console.log(tom.features); // []<br>console.log(kissy.features); // []<br>tom.name = ‘Tom-New Name’;<br>tom.features.push(‘eat’);</p>
+</blockquote>
+<p>//针对父类实例值类型成员的更改，不影响</p>
+<blockquote>
+<p>console.log(tom.name); // “Tom-New Name”<br>console.log(kissy.name); // “Animal”<br>//针对父类实例引用类型成员的更改，会通过影响其他子类实例<br>console.log(tom.features); // [‘eat’]<br>console.log(kissy.features); // [‘eat’]</p>
+</blockquote>
+<p>原因分析：</p>
+<p>关键点：属性查找过程</p>
+<p>执行tom.features.push，首先找tom对象的实例属性（找不到），<br>那么去原型对象中找，也就是Animal的实例。发现有，那么就直接在这个对象的<br>features属性中插入值。<br>在console.log(kissy.features); 的时候。同上，kissy实例上没有，那么去原型上找。<br>刚好原型上有，就直接返回，但是注意，这个原型对象中features属性值已经变化了。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2015/07/18/jsjichen5/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-mianshi1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -597,6 +818,127 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2015/07/13/mianshi1/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-gulp" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/07/13/gulp/">前端构建工具gulp入门教程</a>
+    </h1>
+  
+
+        
+        <a href="/2015/07/13/gulp/" class="archive-article-date">
+  	<time datetime="2015-07-12T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-07-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>不要怕，它其实很简单，我会分为五步向你介绍gulp并帮助你完成一些惊人的事情。那就直接开始吧。</p>
+<h2 id="第一步：安装Node"><a href="#第一步：安装Node" class="headerlink" title="第一步：安装Node"></a>第一步：安装Node</h2><p>首先，最基本也最重要的是，我们需要搭建node环境。访问 <a href="http://nodejs.org" target="_blank" rel="external">http://nodejs.org</a> ，然后点击大大的绿色的 install 按钮，下载完成后直接运行程序，就一切准备就绪。 npm 会随着安装包一起安装，稍后会用到它。</p>
+<h2 id="第二步：使用命令行"><a href="#第二步：使用命令行" class="headerlink" title="第二步：使用命令行"></a>第二步：使用命令行</h2><p>也许现在你还不是很了解什么是命令行——OSX中的终端（Terminal），windows中的命令提示符（Command Prompt），但很快你就会知道。它看起来没那么简单，但一旦掌握了它的窍门，就可以很方便的执行很多命令行程序，比如Sass，Yeoman和Git等，这些都是非常有用的工具。</p>
+<p>如果你很熟悉命令行，直接跳到步骤四。<br>为了确保Node已经正确安装，我们执行几个简单的命令。</p>
+<p>node -v<br>回车（Enter），如果正确安装的话，你会看到所安装的Node的版本号，接下来看看npm。</p>
+<p>npm -v<br>这同样能得到npm的版本号。</p>
+<p>如果这两行命令没有得到返回，可能node就没有安装正确，尝试重启下命令行工具，如果还不行的话，只能回到第一步进行重装。</p>
+<h2 id="第三步：定位到项目"><a href="#第三步：定位到项目" class="headerlink" title="第三步：定位到项目"></a>第三步：定位到项目</h2><p>现在，我们已经大致了解了命令行并且知道如何简单使用它，接下来只需要两个简单的命令就能定位到文件目录并看看目录里都有些什么文件。</p>
+<p>cd，定位到目录<br>ls，列出文件列表<br>建议多敲敲这两个命令，了解文件系统并知道文件都在哪里。<br>习惯使用了这两个命令后，就要进入我们的项目目录，这个目录各不相同，举个例子，这是我进入我项目目录的命令：</p>
+<p>cd /Applications/XAMPP/xamppfiles/htdocs/my-project<br>成功进入项目目录后，我们开始安装gulp。</p>
+<h2 id="第四步：安装gulp"><a href="#第四步：安装gulp" class="headerlink" title="第四步：安装gulp"></a>第四步：安装gulp</h2><p>我们已经知道如何使用命令行，现在尝试点新的东西，认识npm然后安装gulp。</p>
+<p>NPM是基于命令行的node包管理工具，它可以将node的程序模块安装到项目中，在它的 官网 中可以查看和搜索所有可用的程序模块。</p>
+<p>sudo npm install -g gulp<br>sudo是以管理员身份执行命令，一般会要求输入电脑密码<br>npm是安装node模块的工具，执行install命令</p>
+<p>-g表示在全局环境安装，以便任何项目都能使用它</p>
+<p>最后，gulp是将要安装的node模块的名字<br>运行时注意查看命令行有没有错误信息，安装完成后，你可以使用下面的命令查看gulp的版本号以确保gulp已经被正确安装。</p>
+<p>gulp -v<br>接下来，我们需要将gulp安装到项目本地</p>
+<p>npm install —-save-dev gulp<br>这里，我们使用 —-save-dev 来更新package.json文件，更新 devDependencies 值，以表明项目需要依赖gulp。</p>
+<p>Dependencies 可以向其他参与项目的人指明项目在开发环境和生产环境中的node模块依懒关系，想要更加深入的了解它可以看看 package.json文档 。</p>
+<h2 id="第五步：新建Gulpfile文件，运行gulp"><a href="#第五步：新建Gulpfile文件，运行gulp" class="headerlink" title="第五步：新建Gulpfile文件，运行gulp"></a>第五步：新建Gulpfile文件，运行gulp</h2><p>安装好gulp后我们需要告诉它要为我们执行哪些任务，首先，我们自己需要弄清楚项目需要哪些任务。</p>
+<p>检查Javascript<br>编译Sass（或Less之类的）文件<br>合并Javascript<br>压缩并重命名合并后的Javascript<br>安装依赖</p>
+<blockquote>
+<p>npm install gulp-jshint gulp-sass gulp-concat gulp-uglify gulp-rename –save-dev<br>提醒下，如果以上命令提示权限错误，需要添加 sudo 再次尝试。<br>新建gulpfile文件</p>
+</blockquote>
+<p>现在，组件都安装完毕，我们需要新建gulpfile文件以指定gulp需要为我们完成什么任务。</p>
+<p>gulp只有五个方法： task ， run ， watch ， src ，和 dest ，在项目根目录新建一个js文件并命名为 gulpfile.js ，把下面的代码粘贴进去：</p>
+<p>gulpfile.js</p>
+<p>// 引入 gulp</p>
+<blockquote>
+<p>var gulp = require(‘gulp’); </p>
+</blockquote>
+<p>// 引入组件</p>
+<blockquote>
+<p>var jshint = require(‘gulp-jshint’);<br>var sass = require(‘gulp-sass’);<br>var concat = require(‘gulp-concat’);<br>var uglify = require(‘gulp-uglify’);<br>var rename = require(‘gulp-rename’);</p>
+</blockquote>
+<p>// 检查脚本</p>
+<blockquote>
+<p>gulp.task(‘lint’, function() {<br>    gulp.src(‘./js/*.js’)<br>        .pipe(jshint())<br>        .pipe(jshint.reporter(‘default’));<br>});</p>
+</blockquote>
+<p>// 编译Sass</p>
+<blockquote>
+<p>gulp.task(‘sass’, function() {<br>    gulp.src(‘./scss/*.scss’)<br>        .pipe(sass())<br>        .pipe(gulp.dest(‘./css’));<br>});</p>
+</blockquote>
+<p>// 合并，压缩文件</p>
+<blockquote>
+<p>gulp.task(‘scripts’, function() {<br>    gulp.src(‘./js/*.js’)<br>        .pipe(concat(‘all.js’))<br>        .pipe(gulp.dest(‘./dist’))<br>        .pipe(rename(‘all.min.js’))<br>        .pipe(uglify())<br>        .pipe(gulp.dest(‘./dist’));<br>});</p>
+</blockquote>
+<p>// 默认任务</p>
+<blockquote>
+<p>gulp.task(‘default’, function(){<br>    gulp.run(‘lint’, ‘sass’, ‘scripts’);<br>    // 监听文件变化<br>    gulp.watch(‘./js/*.js’, function(){<br>        gulp.run(‘lint’, ‘sass’, ‘scripts’);<br>    });<br>});<br>现在，分段解释下这段代码。</p>
+</blockquote>
+<h2 id="引入组件"><a href="#引入组件" class="headerlink" title="引入组件"></a>引入组件</h2><blockquote>
+<p>var gulp = require(‘gulp’);<br>var jshint = require(‘gulp-jshint’);<br>var sass = require(‘gulp-sass’);<br>var concat = require(‘gulp-concat’);<br>var uglify = require(‘gulp-uglify’);<br>var rename = require(‘gulp-rename’);<br>这一步，我们引入了核心的gulp和其他依赖组件，接下来，分开创建lint, sass, scripts 和 default这四个不同的任务。</p>
+</blockquote>
+<h2 id="Lint任务"><a href="#Lint任务" class="headerlink" title="Lint任务"></a>Lint任务</h2><blockquote>
+<p>gulp.task(‘lint’, function() {<br>    gulp.src(‘./js/*.js’)<br>        .pipe(jshint())<br>        .pipe(jshint.reporter(‘default’));<br>});<br>Link任务会检查 js/ 目录下得js文件有没有报错或警告。</p>
+</blockquote>
+<h2 id="Sass任务"><a href="#Sass任务" class="headerlink" title="Sass任务"></a>Sass任务</h2><blockquote>
+<p>gulp.task(‘sass’, function() {<br>    gulp.src(‘./scss/*.scss’)<br>        .pipe(sass())<br>        .pipe(gulp.dest(‘./css’));<br>});<br>Sass任务会编译 scss/ 目录下的scss文件，并把编译完成的css文件保存到 /css 目录中。</p>
+</blockquote>
+<h2 id="Scripts-任务"><a href="#Scripts-任务" class="headerlink" title="Scripts 任务"></a>Scripts 任务</h2><blockquote>
+<p>gulp.task(‘scripts’, function() {<br>    gulp.src(‘./js/*.js’)<br>        .pipe(concat(‘all.js’))<br>        .pipe(gulp.dest(‘./dist’))<br>        .pipe(rename(‘all.min.js’))<br>        .pipe(uglify())<br>        .pipe(gulp.dest(‘./dist’));<br>});<br>scripts任务会合并 js/ 目录下得所有得js文件并输出到 dist/ 目录，然后gulp会重命名、压缩合并的文件，也输出到 dist/ 目录。</p>
+</blockquote>
+<h2 id="default任务"><a href="#default任务" class="headerlink" title="default任务"></a>default任务</h2><blockquote>
+<p>gulp.task(‘default’, function(){<br>    gulp.run(‘lint’, ‘sass’, ‘scripts’);<br>    gulp.watch(‘./js/*.js’, function(){<br>        gulp.run(‘lint’, ‘sass’, ‘scripts’);<br>    });<br>});<br>这时，我们创建了一个基于其他任务的default任务。使用 .run() 方法关联和运行我们上面定义的任务，使用 .watch() 方法去监听指定目录的文件变化，当有文件变化时，会运行回调定义的其他任务。</p>
+</blockquote>
+<p>现在，回到命令行，可以直接运行gulp任务了。</p>
+<blockquote>
+<p>gulp<br>这将执行定义的default任务，换言之，这和以下的命令式同一个意思</p>
+<p>gulp default<br>当然，我们可以运行在gulpfile.js中定义的任意任务，比如，现在运行sass任务：</p>
+<p>gulp sass</p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2015/07/13/gulp/">展开全文 >></a>
         </p>
       
 

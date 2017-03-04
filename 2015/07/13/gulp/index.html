@@ -6,17 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2015/7 | 未见莫名几许</title>
+  <title>前端构建工具gulp入门教程 | 未见莫名几许</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="I think， therefore I am">
-<meta property="og:type" content="website">
-<meta property="og:title" content="未见莫名几许">
-<meta property="og:url" content="http://yoursite.com/archives/2015/07/index.html">
+  <meta name="description" content="不要怕，它其实很简单，我会分为五步向你介绍gulp并帮助你完成一些惊人的事情。那就直接开始吧。
+第一步：安装Node首先，最基本也最重要的是，我们需要搭建node环境。访问 http://nodejs.org ，然后点击大大的绿色的 install 按钮，下载完成后直接运行程序，就一切准备就绪。 npm 会随着安装包一起安装，稍后会用到它。
+第二步：使用命令行也许现在你还不是很了解什么是命令行——">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端构建工具gulp入门教程">
+<meta property="og:url" content="http://yoursite.com/2015/07/13/gulp/index.html">
 <meta property="og:site_name" content="未见莫名几许">
-<meta property="og:description" content="I think， therefore I am">
+<meta property="og:description" content="不要怕，它其实很简单，我会分为五步向你介绍gulp并帮助你完成一些惊人的事情。那就直接开始吧。
+第一步：安装Node首先，最基本也最重要的是，我们需要搭建node环境。访问 http://nodejs.org ，然后点击大大的绿色的 install 按钮，下载完成后直接运行程序，就一切准备就绪。 npm 会随着安装包一起安装，稍后会用到它。
+第二步：使用命令行也许现在你还不是很了解什么是命令行——">
+<meta property="og:updated_time" content="2017-03-04T15:18:06.693Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="未见莫名几许">
-<meta name="twitter:description" content="I think， therefore I am">
+<meta name="twitter:title" content="前端构建工具gulp入门教程">
+<meta name="twitter:description" content="不要怕，它其实很简单，我会分为五步向你介绍gulp并帮助你完成一些惊人的事情。那就直接开始吧。
+第一步：安装Node首先，最基本也最重要的是，我们需要搭建node环境。访问 http://nodejs.org ，然后点击大大的绿色的 install 按钮，下载完成后直接运行程序，就一切准备就绪。 npm 会随着安装包一起安装，稍后会用到它。
+第二步：使用命令行也许现在你还不是很了解什么是命令行——">
   
     <link rel="alternative" href="/atom.xml" title="未见莫名几许" type="application/atom+xml">
   
@@ -158,292 +165,217 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-gulp" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      前端构建工具gulp入门教程
+    </h1>
+  
+
+        
+        <a href="/2015/07/13/gulp/" class="archive-article-date">
+  	<time datetime="2015-07-12T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-07-13</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>不要怕，它其实很简单，我会分为五步向你介绍gulp并帮助你完成一些惊人的事情。那就直接开始吧。</p>
+<h2 id="第一步：安装Node"><a href="#第一步：安装Node" class="headerlink" title="第一步：安装Node"></a>第一步：安装Node</h2><p>首先，最基本也最重要的是，我们需要搭建node环境。访问 <a href="http://nodejs.org" target="_blank" rel="external">http://nodejs.org</a> ，然后点击大大的绿色的 install 按钮，下载完成后直接运行程序，就一切准备就绪。 npm 会随着安装包一起安装，稍后会用到它。</p>
+<h2 id="第二步：使用命令行"><a href="#第二步：使用命令行" class="headerlink" title="第二步：使用命令行"></a>第二步：使用命令行</h2><p>也许现在你还不是很了解什么是命令行——OSX中的终端（Terminal），windows中的命令提示符（Command Prompt），但很快你就会知道。它看起来没那么简单，但一旦掌握了它的窍门，就可以很方便的执行很多命令行程序，比如Sass，Yeoman和Git等，这些都是非常有用的工具。</p>
+<p>如果你很熟悉命令行，直接跳到步骤四。<br>为了确保Node已经正确安装，我们执行几个简单的命令。</p>
+<p>node -v<br>回车（Enter），如果正确安装的话，你会看到所安装的Node的版本号，接下来看看npm。</p>
+<p>npm -v<br>这同样能得到npm的版本号。</p>
+<p>如果这两行命令没有得到返回，可能node就没有安装正确，尝试重启下命令行工具，如果还不行的话，只能回到第一步进行重装。</p>
+<h2 id="第三步：定位到项目"><a href="#第三步：定位到项目" class="headerlink" title="第三步：定位到项目"></a>第三步：定位到项目</h2><p>现在，我们已经大致了解了命令行并且知道如何简单使用它，接下来只需要两个简单的命令就能定位到文件目录并看看目录里都有些什么文件。</p>
+<p>cd，定位到目录<br>ls，列出文件列表<br>建议多敲敲这两个命令，了解文件系统并知道文件都在哪里。<br>习惯使用了这两个命令后，就要进入我们的项目目录，这个目录各不相同，举个例子，这是我进入我项目目录的命令：</p>
+<p>cd /Applications/XAMPP/xamppfiles/htdocs/my-project<br>成功进入项目目录后，我们开始安装gulp。</p>
+<h2 id="第四步：安装gulp"><a href="#第四步：安装gulp" class="headerlink" title="第四步：安装gulp"></a>第四步：安装gulp</h2><p>我们已经知道如何使用命令行，现在尝试点新的东西，认识npm然后安装gulp。</p>
+<p>NPM是基于命令行的node包管理工具，它可以将node的程序模块安装到项目中，在它的 官网 中可以查看和搜索所有可用的程序模块。</p>
+<p>sudo npm install -g gulp<br>sudo是以管理员身份执行命令，一般会要求输入电脑密码<br>npm是安装node模块的工具，执行install命令</p>
+<p>-g表示在全局环境安装，以便任何项目都能使用它</p>
+<p>最后，gulp是将要安装的node模块的名字<br>运行时注意查看命令行有没有错误信息，安装完成后，你可以使用下面的命令查看gulp的版本号以确保gulp已经被正确安装。</p>
+<p>gulp -v<br>接下来，我们需要将gulp安装到项目本地</p>
+<p>npm install —-save-dev gulp<br>这里，我们使用 —-save-dev 来更新package.json文件，更新 devDependencies 值，以表明项目需要依赖gulp。</p>
+<p>Dependencies 可以向其他参与项目的人指明项目在开发环境和生产环境中的node模块依懒关系，想要更加深入的了解它可以看看 package.json文档 。</p>
+<h2 id="第五步：新建Gulpfile文件，运行gulp"><a href="#第五步：新建Gulpfile文件，运行gulp" class="headerlink" title="第五步：新建Gulpfile文件，运行gulp"></a>第五步：新建Gulpfile文件，运行gulp</h2><p>安装好gulp后我们需要告诉它要为我们执行哪些任务，首先，我们自己需要弄清楚项目需要哪些任务。</p>
+<p>检查Javascript<br>编译Sass（或Less之类的）文件<br>合并Javascript<br>压缩并重命名合并后的Javascript<br>安装依赖</p>
+<blockquote>
+<p>npm install gulp-jshint gulp-sass gulp-concat gulp-uglify gulp-rename –save-dev<br>提醒下，如果以上命令提示权限错误，需要添加 sudo 再次尝试。<br>新建gulpfile文件</p>
+</blockquote>
+<p>现在，组件都安装完毕，我们需要新建gulpfile文件以指定gulp需要为我们完成什么任务。</p>
+<p>gulp只有五个方法： task ， run ， watch ， src ，和 dest ，在项目根目录新建一个js文件并命名为 gulpfile.js ，把下面的代码粘贴进去：</p>
+<p>gulpfile.js</p>
+<p>// 引入 gulp</p>
+<blockquote>
+<p>var gulp = require(‘gulp’); </p>
+</blockquote>
+<p>// 引入组件</p>
+<blockquote>
+<p>var jshint = require(‘gulp-jshint’);<br>var sass = require(‘gulp-sass’);<br>var concat = require(‘gulp-concat’);<br>var uglify = require(‘gulp-uglify’);<br>var rename = require(‘gulp-rename’);</p>
+</blockquote>
+<p>// 检查脚本</p>
+<blockquote>
+<p>gulp.task(‘lint’, function() {<br>    gulp.src(‘./js/*.js’)<br>        .pipe(jshint())<br>        .pipe(jshint.reporter(‘default’));<br>});</p>
+</blockquote>
+<p>// 编译Sass</p>
+<blockquote>
+<p>gulp.task(‘sass’, function() {<br>    gulp.src(‘./scss/*.scss’)<br>        .pipe(sass())<br>        .pipe(gulp.dest(‘./css’));<br>});</p>
+</blockquote>
+<p>// 合并，压缩文件</p>
+<blockquote>
+<p>gulp.task(‘scripts’, function() {<br>    gulp.src(‘./js/*.js’)<br>        .pipe(concat(‘all.js’))<br>        .pipe(gulp.dest(‘./dist’))<br>        .pipe(rename(‘all.min.js’))<br>        .pipe(uglify())<br>        .pipe(gulp.dest(‘./dist’));<br>});</p>
+</blockquote>
+<p>// 默认任务</p>
+<blockquote>
+<p>gulp.task(‘default’, function(){<br>    gulp.run(‘lint’, ‘sass’, ‘scripts’);<br>    // 监听文件变化<br>    gulp.watch(‘./js/*.js’, function(){<br>        gulp.run(‘lint’, ‘sass’, ‘scripts’);<br>    });<br>});<br>现在，分段解释下这段代码。</p>
+</blockquote>
+<h2 id="引入组件"><a href="#引入组件" class="headerlink" title="引入组件"></a>引入组件</h2><blockquote>
+<p>var gulp = require(‘gulp’);<br>var jshint = require(‘gulp-jshint’);<br>var sass = require(‘gulp-sass’);<br>var concat = require(‘gulp-concat’);<br>var uglify = require(‘gulp-uglify’);<br>var rename = require(‘gulp-rename’);<br>这一步，我们引入了核心的gulp和其他依赖组件，接下来，分开创建lint, sass, scripts 和 default这四个不同的任务。</p>
+</blockquote>
+<h2 id="Lint任务"><a href="#Lint任务" class="headerlink" title="Lint任务"></a>Lint任务</h2><blockquote>
+<p>gulp.task(‘lint’, function() {<br>    gulp.src(‘./js/*.js’)<br>        .pipe(jshint())<br>        .pipe(jshint.reporter(‘default’));<br>});<br>Link任务会检查 js/ 目录下得js文件有没有报错或警告。</p>
+</blockquote>
+<h2 id="Sass任务"><a href="#Sass任务" class="headerlink" title="Sass任务"></a>Sass任务</h2><blockquote>
+<p>gulp.task(‘sass’, function() {<br>    gulp.src(‘./scss/*.scss’)<br>        .pipe(sass())<br>        .pipe(gulp.dest(‘./css’));<br>});<br>Sass任务会编译 scss/ 目录下的scss文件，并把编译完成的css文件保存到 /css 目录中。</p>
+</blockquote>
+<h2 id="Scripts-任务"><a href="#Scripts-任务" class="headerlink" title="Scripts 任务"></a>Scripts 任务</h2><blockquote>
+<p>gulp.task(‘scripts’, function() {<br>    gulp.src(‘./js/*.js’)<br>        .pipe(concat(‘all.js’))<br>        .pipe(gulp.dest(‘./dist’))<br>        .pipe(rename(‘all.min.js’))<br>        .pipe(uglify())<br>        .pipe(gulp.dest(‘./dist’));<br>});<br>scripts任务会合并 js/ 目录下得所有得js文件并输出到 dist/ 目录，然后gulp会重命名、压缩合并的文件，也输出到 dist/ 目录。</p>
+</blockquote>
+<h2 id="default任务"><a href="#default任务" class="headerlink" title="default任务"></a>default任务</h2><blockquote>
+<p>gulp.task(‘default’, function(){<br>    gulp.run(‘lint’, ‘sass’, ‘scripts’);<br>    gulp.watch(‘./js/*.js’, function(){<br>        gulp.run(‘lint’, ‘sass’, ‘scripts’);<br>    });<br>});<br>这时，我们创建了一个基于其他任务的default任务。使用 .run() 方法关联和运行我们上面定义的任务，使用 .watch() 方法去监听指定目录的文件变化，当有文件变化时，会运行回调定义的其他任务。</p>
+</blockquote>
+<p>现在，回到命令行，可以直接运行gulp任务了。</p>
+<blockquote>
+<p>gulp<br>这将执行定义的default任务，换言之，这和以下的命令式同一个意思</p>
+<p>gulp default<br>当然，我们可以运行在gulpfile.js中定义的任意任务，比如，现在运行sass任务：</p>
+<p>gulp sass</p>
+</blockquote>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/weixin.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2015" class="archive-year">2015</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2015/07/18/angular/" class="archive-article-date">
-  	<time datetime="2015-07-17T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-07-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/07/18/angular/">Angular路由的定义和使用</a>
-    </h1>
-  
+      
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2015/07/13/gulp/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2015/07/18/vue/" class="archive-article-date">
-  	<time datetime="2015-07-17T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-07-18</time>
-</a>
-        </div>
-    	 
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/07/18/vue/">Vue.js为什么不支持templateUrl模式</a>
-    </h1>
+    <a href="/2015/07/13/mianshi1/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          前端面试知识点总结
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+
+
+
+
+
+  
+    <div class="duoshuo"></div>
   
 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2015/07/18/model3/" class="archive-article-date">
-  	<time datetime="2015-07-17T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-07-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/07/18/model3/">JavaScript 模块化入门Ⅰ：理解模块</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2015/07/18/model4/" class="archive-article-date">
-  	<time datetime="2015-07-17T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-07-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/07/18/model4/">JavaScript 模块化入门Ⅱ：模块打包构建</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2015/07/18/webpack/" class="archive-article-date">
-  	<time datetime="2015-07-17T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-07-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/07/18/webpack/">Webpack傻瓜式指南</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2015/07/18/less6/" class="archive-article-date">
-  	<time datetime="2015-07-17T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-07-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/07/18/less6/">浅谈css的预编译---less语言</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2015/07/18/jsjichen5/" class="archive-article-date">
-  	<time datetime="2015-07-17T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-07-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/07/18/jsjichen5/">JS实现继承的几种方式</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2015/07/13/me/" class="archive-article-date">
-  	<time datetime="2015-07-12T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-07-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/07/13/me/">Welcome To My Blog</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2015/07/13/mianshi1/" class="archive-article-date">
-  	<time datetime="2015-07-12T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-07-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/07/13/mianshi1/">前端面试知识点总结</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2015/07/13/gulp/" class="archive-article-date">
-  	<time datetime="2015-07-12T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-07-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/07/13/gulp/">前端构建工具gulp入门教程</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -466,8 +398,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
