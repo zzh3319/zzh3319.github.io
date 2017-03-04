@@ -20,17 +20,13 @@
 作者：Preethi Kasireddy
 在上一篇教程里我们已经讨论过什么是模块，为什么要使用模块以及多种实现模块化的方式。
 这次，我们会聊一聊什么是模块打包，为什么要打包模块，模块打包的方式工具，还有它当前在Web开发中的运用。">
-<meta property="og:image" content="https://pic3.zhimg.com/v2-0e892f7f3142809a1229a0ad46130f9e_r.jpg">
-<meta property="og:image" content="https://pic3.zhimg.com/v2-60a0bef5aeb7549f5849bbcf32c0d80e_b.png">
-<meta property="og:image" content="https://pic3.zhimg.com/v2-c15de2bbc52eff93e1cceac5598b8f8a_b.png">
-<meta property="og:updated_time" content="2017-03-04T13:07:07.135Z">
+<meta property="og:updated_time" content="2017-03-04T13:10:02.857Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript 模块化入门Ⅱ：模块打包构建">
 <meta name="twitter:description" content="原文链接：JavaScript Modules Part 2: Module Bundling
 作者：Preethi Kasireddy
 在上一篇教程里我们已经讨论过什么是模块，为什么要使用模块以及多种实现模块化的方式。
 这次，我们会聊一聊什么是模块打包，为什么要打包模块，模块打包的方式工具，还有它当前在Web开发中的运用。">
-<meta name="twitter:image" content="https://pic3.zhimg.com/v2-0e892f7f3142809a1229a0ad46130f9e_r.jpg">
   
     <link rel="alternative" href="/atom.xml" title="未见莫名几许" type="application/atom+xml">
   
@@ -192,7 +188,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="https://pic3.zhimg.com/v2-0e892f7f3142809a1229a0ad46130f9e_r.jpg" alt=""><br>原文链接：<a href="https://link.zhihu.com/?target=https%3A//medium.freecodecamp.com/javascript-modules-part-2-module-bundling-5020383cf306" target="_blank" rel="external">JavaScript Modules Part 2: Module Bundling</a></p>
+        <p>原文链接：<a href="https://link.zhihu.com/?target=https%3A//medium.freecodecamp.com/javascript-modules-part-2-module-bundling-5020383cf306" target="_blank" rel="external">JavaScript Modules Part 2: Module Bundling</a></p>
 <p>作者：<a href="https://link.zhihu.com/?target=https%3A//medium.freecodecamp.com/%40preethikasireddy" target="_blank" rel="external">Preethi Kasireddy</a></p>
 <p>在上一篇教程里我们已经讨论过什么是模块，为什么要使用模块以及多种实现模块化的方式。</p>
 <p>这次，我们会聊一聊什么是模块打包，为什么要打包模块，模块打包的方式工具，还有它当前在Web开发中的运用。<br><a id="more"></a></p>
@@ -203,7 +199,7 @@
 <p>这就有可能导致页面载入时间过长。</p>
 <p>为了解决这个问题，我们就需要进行模块打包，把所有的模块合并到一个或几个文件中，以此来减少HTTP请求数。这也可以被称作是从开发到上线前的构建环节。</p>
 <p>还有一种提升加载速度的做法叫做代码压缩（混淆）。其实就是去除代码中不必要的空格、注释、换行符一类的字符，来保证在不影响代码正常工作的情况下压缩其体积。</p>
-<p>更小的文件体积也就意味着更短的加载时间。要是你仔细对比过带有 .min后缀的例如 jquery.min.js和jquery.js的话，应该会发现压缩版的文件相较之下要小很多。<br><img src="https://pic3.zhimg.com/v2-60a0bef5aeb7549f5849bbcf32c0d80e_b.png" alt=""></p>
+<p>更小的文件体积也就意味着更短的加载时间。要是你仔细对比过带有 .min后缀的例如 jquery.min.js和jquery.js的话，应该会发现压缩版的文件相较之下要小很多。</p>
 <p>Gulp和Grunt一类的构建工具可以很方便地解决上述的需求，在开发的时候通过模块来组织代码，上线时再合并压缩提供给浏览器。</p>
 <h2 id="打包模块的方法有哪些？"><a href="#打包模块的方法有哪些？" class="headerlink" title="打包模块的方法有哪些？"></a>打包模块的方法有哪些？</h2><p>如果你的代码是通过之前介绍过的模块模式来组织的，合并和压缩它们其实就只是把一些原生的JS代码合在一起而已。</p>
 <p>但如果你使用的是一些浏览器原生不支持的模块系统（例如CommonJS 或 AMD，以及ES6 模块的支持现在也不完整），你就需要使用一些专门的构建工具来把它们转换成浏览器支持的代码。这类工具就是我们最近经常听说的Browserify, RequireJS, Webpack等等模块化构建、模块化加载工具了。</p>
@@ -237,7 +233,7 @@
 <p>Utils.each([1, 2, 3], function(x) { console.log(x) });<br>通过 “tree shaken” 之后的 main.js 看起来就像下面这样：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">//treeshake.js </div><div class="line">function each(collection, iterator) &#123;</div><div class="line">  if (Array.isArray(collection)) &#123;</div><div class="line">    for (var i = 0; i &lt; collection.length; i++) &#123;</div><div class="line">      iterator(collection[i], i, collection);</div><div class="line">    &#125;</div><div class="line">  &#125; else &#123;</div><div class="line">    for (var key in collection) &#123;</div><div class="line">      iterator(collection[key], key, collection);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"> &#125;;</div><div class="line"></div><div class="line">each([1, 2, 3], function(x) &#123; console.log(x) &#125;);</div><div class="line">注意到这里只导出了我们调用过的 each 方法。</div></pre></td></tr></table></figure></p>
 <p>再如果我们只调用 filter 方法的话：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">//main.js</div><div class="line">import * as Utils from &apos;./utils.js&apos;;</div><div class="line"></div><div class="line">Utils.filter([1, 2, 3], function(x) &#123; return x === 2 &#125;);</div><div class="line">&quot;Tree shaken&quot; 之后就会变成这样：</div><div class="line"></div><div class="line">function each(collection, iterator) &#123;</div><div class="line">  if (Array.isArray(collection)) &#123;</div><div class="line">    for (var i = 0; i &lt; collection.length; i++) &#123;</div><div class="line">      iterator(collection[i], i, collection);</div><div class="line">    &#125;</div><div class="line">  &#125; else &#123;</div><div class="line">    for (var key in collection) &#123;</div><div class="line">      iterator(collection[key], key, collection);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"> &#125;;</div><div class="line"></div><div class="line">function filter(collection, test) &#123;</div><div class="line">  var filtered = [];</div><div class="line">  //注意在filter中调用了each，所以两个方法都会被引入</div><div class="line">  each(collection, function(item) &#123;</div><div class="line">    if (test(item)) &#123;</div><div class="line">      filtered.push(item);</div><div class="line">    &#125;</div><div class="line">  &#125;);</div><div class="line">  return filtered;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">filter([1, 2, 3], function(x) &#123; return x === 2 &#125;);</div></pre></td></tr></table></figure></p>
 <p>很神奇不是么？</p>
-<p>你也可以自己在Rollup.js的实时预览编辑器里做做试验：live demo and editor<br><img src="https://pic3.zhimg.com/v2-c15de2bbc52eff93e1cceac5598b8f8a_b.png" alt=""></p>
+<p>你也可以自己在Rollup.js的实时预览编辑器里做做试验：live demo and editor</p>
 <h2 id="构建ES6模块"><a href="#构建ES6模块" class="headerlink" title="构建ES6模块"></a>构建ES6模块</h2><p>现在我们已经了解到ES6模块载入的与众不同了，但我们还没有聊到底该怎么构建ES6模块。</p>
 <p>因为浏览器对ES6模块的原生支持还不够完善，所以现阶段还需要我们做一些补充工作。</p>
 <p>让ES6模块在浏览器中顺利运行的常用方法有以下几种：</p>
