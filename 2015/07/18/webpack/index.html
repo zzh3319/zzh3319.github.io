@@ -8,23 +8,16 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Webpack傻瓜式指南 | 未见莫名几许</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Webpack最近很热，我一开始是想翻译一篇国外关于webpack的佳作，但是找来找去也没有一篇让我感觉到很满意的，好多都是一步到位，满屏幕都是React＋Webpack，官方文档写的不太好，好多点都没有解释的详细，所以我参考了几篇文章，写一篇傻瓜式指南。本文适合第一次接触webpack的朋友，如果是老鸟，就不用看了。这是系列的第一篇，主要讲他最基本的用法。
-比较如果你熟悉原来一系列的构建工具，g">
+  <meta name="description" content="Webpack最近很热，我一开始是想翻译一篇国外关于webpack的佳作，但是找来找去也没有一篇让我感觉到很满意的，好多都是一步到位，满屏幕都是React＋Webpack，官方文档写的不太好，好多点都没有解释的详细，所以我参考了几篇文章，写一篇傻瓜式指南。本文适合第一次接触webpack的朋友，如果是老鸟，就不用看了。这是系列的第一篇，主要讲他最基本的用法。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Webpack傻瓜式指南">
 <meta property="og:url" content="http://yoursite.com/2015/07/18/webpack/index.html">
 <meta property="og:site_name" content="未见莫名几许">
-<meta property="og:description" content="Webpack最近很热，我一开始是想翻译一篇国外关于webpack的佳作，但是找来找去也没有一篇让我感觉到很满意的，好多都是一步到位，满屏幕都是React＋Webpack，官方文档写的不太好，好多点都没有解释的详细，所以我参考了几篇文章，写一篇傻瓜式指南。本文适合第一次接触webpack的朋友，如果是老鸟，就不用看了。这是系列的第一篇，主要讲他最基本的用法。
-比较如果你熟悉原来一系列的构建工具，g">
-<meta property="og:image" content="https://pic4.zhimg.com/524ee3f84a1742cbc4de3e2ff95ce983_b.png">
-<meta property="og:image" content="https://pic2.zhimg.com/8b3637b909d05a97a3a26070438f071d_b.png">
-<meta property="og:image" content="https://pic4.zhimg.com/bd37ab4ccfa3ea7f3dc624e2e7c8303f_b.png">
-<meta property="og:updated_time" content="2017-03-04T14:59:39.570Z">
+<meta property="og:description" content="Webpack最近很热，我一开始是想翻译一篇国外关于webpack的佳作，但是找来找去也没有一篇让我感觉到很满意的，好多都是一步到位，满屏幕都是React＋Webpack，官方文档写的不太好，好多点都没有解释的详细，所以我参考了几篇文章，写一篇傻瓜式指南。本文适合第一次接触webpack的朋友，如果是老鸟，就不用看了。这是系列的第一篇，主要讲他最基本的用法。">
+<meta property="og:updated_time" content="2017-03-04T15:38:11.009Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Webpack傻瓜式指南">
-<meta name="twitter:description" content="Webpack最近很热，我一开始是想翻译一篇国外关于webpack的佳作，但是找来找去也没有一篇让我感觉到很满意的，好多都是一步到位，满屏幕都是React＋Webpack，官方文档写的不太好，好多点都没有解释的详细，所以我参考了几篇文章，写一篇傻瓜式指南。本文适合第一次接触webpack的朋友，如果是老鸟，就不用看了。这是系列的第一篇，主要讲他最基本的用法。
-比较如果你熟悉原来一系列的构建工具，g">
-<meta name="twitter:image" content="https://pic4.zhimg.com/524ee3f84a1742cbc4de3e2ff95ce983_b.png">
+<meta name="twitter:description" content="Webpack最近很热，我一开始是想翻译一篇国外关于webpack的佳作，但是找来找去也没有一篇让我感觉到很满意的，好多都是一步到位，满屏幕都是React＋Webpack，官方文档写的不太好，好多点都没有解释的详细，所以我参考了几篇文章，写一篇傻瓜式指南。本文适合第一次接触webpack的朋友，如果是老鸟，就不用看了。这是系列的第一篇，主要讲他最基本的用法。">
   
     <link rel="alternative" href="/atom.xml" title="未见莫名几许" type="application/atom+xml">
   
@@ -186,7 +179,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="https://pic4.zhimg.com/524ee3f84a1742cbc4de3e2ff95ce983_b.png" alt=""><br>Webpack最近很热，我一开始是想翻译一篇国外关于webpack的佳作，但是找来找去也没有一篇让我感觉到很满意的，好多都是一步到位，满屏幕都是React＋Webpack，官方文档写的不太好，好多点都没有解释的详细，所以我参考了几篇文章，写一篇傻瓜式指南。本文适合第一次接触webpack的朋友，如果是老鸟，就不用看了。这是系列的第一篇，主要讲他最基本的用法。</p>
+        <p>Webpack最近很热，我一开始是想翻译一篇国外关于webpack的佳作，但是找来找去也没有一篇让我感觉到很满意的，好多都是一步到位，满屏幕都是React＋Webpack，官方文档写的不太好，好多点都没有解释的详细，所以我参考了几篇文章，写一篇傻瓜式指南。本文适合第一次接触webpack的朋友，如果是老鸟，就不用看了。这是系列的第一篇，主要讲他最基本的用法。<br><a id="more"></a></p>
 <h2 id="比较"><a href="#比较" class="headerlink" title="比较"></a>比较</h2><p>如果你熟悉原来一系列的构建工具，grunt或者gulp之类的，这里有一篇webpack和他们比较的文章可以读一读。 Webpack Compared</p>
 <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>先装好node和npm，因为webpack是一个基于node的项目。然后</p>
 <p>npm install -g webpack</p>
@@ -246,7 +239,7 @@
 <p>下面举个栗子。</p>
 <p>新建一个imgs文件夹，往里面添加一张崔叔的照片。在scss文件中添加如下的东西。</p>
 <p>@import “./variables.scss”;</p>
-<p>h1 {<br>  color: $red;<br>  background: url(‘./imgs/avatar.jpg’);<br>}<br>npm start, 然后查看图片的url，发现神奇。<br><img src="https://pic2.zhimg.com/8b3637b909d05a97a3a26070438f071d_b.png" alt=""></p>
+<p>h1 {<br>  color: $red;<br>  background: url(‘./imgs/avatar.jpg’);<br>}<br>npm start, 然后查看图片的url，发现神奇。</p>
 <h2 id="添加第三方库"><a href="#添加第三方库" class="headerlink" title="添加第三方库"></a>添加第三方库</h2><p>有的时候还想来点jquery，moment，undersocre之类的库，webpack可以非常容易的做到这一点，有谣言说Bower即将停止开发了, 作者推荐都使用npm来管理依赖。那么我们现在安装在我们的app中添加jquery和moment的支持。</p>
 <p>npm install jquery moment –save-dev<br>在js中引用</p>
 <blockquote>
@@ -257,7 +250,7 @@
 <p>npm install babel-loader babel-preset-es2015 –save-dev<br>配置我们的config文件</p>
 <p>…<br>      {<br>        test: /.jsx?$/,<br>        loader: ‘babel’,<br>        include: APP_PATH,<br>        query: {<br>          presets: [‘es2015’]<br>        }<br>      },<br>…<br>es2015这个参数是babel的plugin，可以支持各种最新的es6的特性，具体的情况看这个链接。 Babel es2015 plugin</p>
 <p>现在我们可以改掉CommonJS风格的文件了。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">sub.js</div><div class="line"></div><div class="line">export default function() &#123;</div><div class="line">  var element = document.createElement(&apos;h2&apos;);</div><div class="line">  element.innerHTML = &quot;Hello h2 world hahaha&quot;;</div><div class="line">  return element;</div><div class="line">&#125;</div><div class="line">index.js</div><div class="line"></div><div class="line">import &apos;./main.scss&apos;;</div><div class="line">import generateText from &apos;./sub&apos;;</div><div class="line">import $ from &apos;jquery&apos;;</div><div class="line">import moment from &apos;moment&apos;;</div><div class="line"></div><div class="line">let app  = document.createElement(&apos;div&apos;);</div><div class="line">const myPromise = Promise.resolve(42);</div><div class="line">myPromise.then((number) =&gt; &#123;</div><div class="line">  $(&apos;body&apos;).append(&apos;&lt;p&gt;promise result is &apos; + number + &apos; now is &apos; + moment().format() + &apos;&lt;/p&gt;&apos;);</div><div class="line">&#125;);</div><div class="line">app.innerHTML = &apos;&lt;h1&gt;Hello World it&lt;/h1&gt;&apos;;</div><div class="line">document.body.appendChild(app);</div><div class="line">app.appendChild(generateText());</div><div class="line">我们上面测试了import, export，const，let，promise等一系列es6的特性。</div></pre></td></tr></table></figure></p>
-<p>最后完美的输出界面。<br><img src="https://pic4.zhimg.com/bd37ab4ccfa3ea7f3dc624e2e7c8303f_b.png" alt=""></p>
+<p>最后完美的输出界面。</p>
 
       
 

@@ -8,31 +8,28 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>JS实现继承的几种方式 | 未见莫名几许</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="前言
-JS作为面向对象的弱类型语言，继承也是其非常强大的特性之一。那么如何在JS中实现继承呢？让我们拭目以待。
+  <meta name="description" content="JS作为面向对象的弱类型语言，继承也是其非常强大的特性之一。那么如何在JS中实现继承呢？让我们拭目以待。
 JS继承的实现方式既然要实现继承，那么首先我们得有一个父类，代码如下：
 // 定义一个动物类
 
-function Animal (name) {  // 属性  this.name = name || ‘Animal’;  // 实例方法  this.sleep = function()">
+function Animal (name) {  // 属性  this.name = name || ‘Animal’;  // 实例方法  this.sleep = function(){">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JS实现继承的几种方式">
 <meta property="og:url" content="http://yoursite.com/2015/07/18/jsjichen5/index.html">
 <meta property="og:site_name" content="未见莫名几许">
-<meta property="og:description" content="前言
-JS作为面向对象的弱类型语言，继承也是其非常强大的特性之一。那么如何在JS中实现继承呢？让我们拭目以待。
+<meta property="og:description" content="JS作为面向对象的弱类型语言，继承也是其非常强大的特性之一。那么如何在JS中实现继承呢？让我们拭目以待。
 JS继承的实现方式既然要实现继承，那么首先我们得有一个父类，代码如下：
 // 定义一个动物类
 
-function Animal (name) {  // 属性  this.name = name || ‘Animal’;  // 实例方法  this.sleep = function()">
-<meta property="og:updated_time" content="2017-03-04T15:24:31.807Z">
+function Animal (name) {  // 属性  this.name = name || ‘Animal’;  // 实例方法  this.sleep = function(){">
+<meta property="og:updated_time" content="2017-03-04T15:40:36.887Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS实现继承的几种方式">
-<meta name="twitter:description" content="前言
-JS作为面向对象的弱类型语言，继承也是其非常强大的特性之一。那么如何在JS中实现继承呢？让我们拭目以待。
+<meta name="twitter:description" content="JS作为面向对象的弱类型语言，继承也是其非常强大的特性之一。那么如何在JS中实现继承呢？让我们拭目以待。
 JS继承的实现方式既然要实现继承，那么首先我们得有一个父类，代码如下：
 // 定义一个动物类
 
-function Animal (name) {  // 属性  this.name = name || ‘Animal’;  // 实例方法  this.sleep = function()">
+function Animal (name) {  // 属性  this.name = name || ‘Animal’;  // 实例方法  this.sleep = function(){">
   
     <link rel="alternative" href="/atom.xml" title="未见莫名几许" type="application/atom+xml">
   
@@ -194,12 +191,11 @@ function Animal (name) {  // 属性  this.name = name || ‘Animal’;  // 实�
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>前言</p>
-<p>JS作为面向对象的弱类型语言，继承也是其非常强大的特性之一。那么如何在JS中实现继承呢？让我们拭目以待。</p>
+        <p>JS作为面向对象的弱类型语言，继承也是其非常强大的特性之一。那么如何在JS中实现继承呢？让我们拭目以待。</p>
 <p>JS继承的实现方式<br>既然要实现继承，那么首先我们得有一个父类，代码如下：</p>
 <p>// 定义一个动物类</p>
 <blockquote>
-<p>function Animal (name) {<br>  // 属性<br>  this.name = name || ‘Animal’;<br>  // 实例方法<br>  this.sleep = function(){<br>    console.log(this.name + ‘正在睡觉！’);<br>  }<br>}<br>// 原型方法<br>Animal.prototype.eat = function(food) {<br>  console.log(this.name + ‘正在吃：’ + food);<br>};</p>
+<p>function Animal (name) {<br>  // 属性<br>  this.name = name || ‘Animal’;<br>  // 实例方法<br>  this.sleep = function(){<br>    console.log(this.name + ‘正在睡觉！’);<br>  }<br>}<br><a id="more"></a><br>// 原型方法<br>Animal.prototype.eat = function(food) {<br>  console.log(this.name + ‘正在吃：’ + food);<br>};</p>
 <h2 id="1、原型链继承"><a href="#1、原型链继承" class="headerlink" title="1、原型链继承"></a>1、原型链继承</h2></blockquote>
 <p>核心： 将父类的实例作为子类的原型</p>
 <blockquote>
