@@ -8,19 +8,16 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Angular路由的定义和使用 | 未见莫名几许</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一、什么是routing（路由）
-Almost all non-trivial, non-demo Single Page App (SPA) require multiple pages. A settings page is different from a dashboard view. The login page is different from an accounts page（设置">
+  <meta name="description" content="一、什么是routing（路由）Almost all non-trivial, non-demo Single Page App (SPA) require multiple pages. A settings page is different from a dashboard view. The login page is different from an accounts page（设置页">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Angular路由的定义和使用">
 <meta property="og:url" content="http://yoursite.com/2015/07/18/angular/index.html">
 <meta property="og:site_name" content="未见莫名几许">
-<meta property="og:description" content="一、什么是routing（路由）
-Almost all non-trivial, non-demo Single Page App (SPA) require multiple pages. A settings page is different from a dashboard view. The login page is different from an accounts page（设置">
-<meta property="og:updated_time" content="2017-03-04T11:50:02.802Z">
+<meta property="og:description" content="一、什么是routing（路由）Almost all non-trivial, non-demo Single Page App (SPA) require multiple pages. A settings page is different from a dashboard view. The login page is different from an accounts page（设置页">
+<meta property="og:updated_time" content="2017-03-04T12:48:11.375Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Angular路由的定义和使用">
-<meta name="twitter:description" content="一、什么是routing（路由）
-Almost all non-trivial, non-demo Single Page App (SPA) require multiple pages. A settings page is different from a dashboard view. The login page is different from an accounts page（设置">
+<meta name="twitter:description" content="一、什么是routing（路由）Almost all non-trivial, non-demo Single Page App (SPA) require multiple pages. A settings page is different from a dashboard view. The login page is different from an accounts page（设置页">
   
     <link rel="alternative" href="/atom.xml" title="未见莫名几许" type="application/atom+xml">
   
@@ -182,12 +179,10 @@ Almost all non-trivial, non-demo Single Page App (SPA) require multiple pages. A
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>一、什么是routing（路由）</p>
-<p>Almost all non-trivial, non-demo Single Page App (SPA) require multiple pages. A settings page is different from a dashboard view. The login page is different from an accounts page（设置页面不同于控制页面，登录页面不同于账号信息页面。。。。就是说一个应用很多功能不同的页面）</p>
-<p>我们可以使用Angular简单优雅地实现这个功能（页面之间的控制跳转…）<br><a id="more"></a><br>二、安装</p>
-<p>使用angular的路由功能需要安装routing模块…（引入angular-route.js就可以了）</p>
-<p>三、定义</p>
-<p>定义路由非常容易，在我们的应用mian模块里面注入ngRoute依赖就可以了</p>
+        <h2 id="一、什么是routing（路由）"><a href="#一、什么是routing（路由）" class="headerlink" title="一、什么是routing（路由）"></a>一、什么是routing（路由）</h2><p>Almost all non-trivial, non-demo Single Page App (SPA) require multiple pages. A settings page is different from a dashboard view. The login page is different from an accounts page（设置页面不同于控制页面，登录页面不同于账号信息页面。。。。就是说一个应用很多功能不同的页面）</p>
+<p>我们可以使用Angular简单优雅地实现这个功能（页面之间的控制跳转…）<br><a id="more"></a></p>
+<h2 id="二、安装"><a href="#二、安装" class="headerlink" title="二、安装"></a>二、安装</h2><p>使用angular的路由功能需要安装routing模块…（引入angular-route.js就可以了）</p>
+<h2 id="三、定义"><a href="#三、定义" class="headerlink" title="三、定义"></a>三、定义</h2><p>定义路由非常容易，在我们的应用mian模块里面注入ngRoute依赖就可以了</p>
 <blockquote>
 <p>angular.module(‘myApp’, [‘ngRoute’])<br>  .config(function($routeProvider) {});</p>
 </blockquote>
@@ -202,8 +197,7 @@ Almost all non-trivial, non-demo Single Page App (SPA) require multiple pages. A
 <blockquote>
 <p>angular.module(‘myApp’, [‘ngRoute’])<br>.config(function($routeProvider) {<br>  $routeProvider<br>    .when(‘/‘, {<br>      templateUrl: ‘views/main.html’,<br>      controller: ‘MainCtrl’<br>    })<br>    .when(‘/day/:id’, {<br>      templateUrl: ‘views/day.html’,<br>      controller: ‘DayCtrl’<br>    })<br>    .otherwise({<br>      redirectTo: ‘/‘<br>    });<br>})</p>
 </blockquote>
-<p>四、使用</p>
-<p>定义好了路由需要怎么使用呢?我们要告诉angular页面的哪一个部分是我们希望转换的，这需要使用到ng-view指令</p>
+<h2 id="四、使用"><a href="#四、使用" class="headerlink" title="四、使用"></a>四、使用</h2><p>定义好了路由需要怎么使用呢?我们要告诉angular页面的哪一个部分是我们希望转换的，这需要使用到ng-view指令</p>
 <blockquote>
 <p>&lt;div class=”header”&amp;gtMy page&lt;/div&gt;<br>&lt;div ng-view&gt;&lt;/div&gt;<br>&lt;span class=”footer”&gt;A footer&lt;/span&gt;”</p>
 </blockquote>

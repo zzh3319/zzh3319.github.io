@@ -8,19 +8,16 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>前端面试知识点总结 | 未见莫名几许</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一、html+css部分、
-（1）css盒模型，可能会要求手写一个布局，这个布局基本上用到的css是margin的负值，boxing-sizing：border-box，布局尽量往这方面想。浏览器布局的基本元素是盒，在w3c的标准模式下，width=width，但是在怪异模式下，width=border2+padding2+width;其中后代元素的width：100%；参照的是右边的那个widt">
+  <meta name="description" content="一、html+css部分、（1）css盒模型，可能会要求手写一个布局，这个布局基本上用到的css是margin的负值，boxing-sizing：border-box，布局尽量往这方面想。浏览器布局的基本元素是盒，在w3c的标准模式下，width=width，但是在怪异模式下，width=border2+padding2+width;其中后代元素的width：100%；参照的是右边的那个width">
 <meta property="og:type" content="article">
 <meta property="og:title" content="前端面试知识点总结">
 <meta property="og:url" content="http://yoursite.com/2015/07/13/mianshi1/index.html">
 <meta property="og:site_name" content="未见莫名几许">
-<meta property="og:description" content="一、html+css部分、
-（1）css盒模型，可能会要求手写一个布局，这个布局基本上用到的css是margin的负值，boxing-sizing：border-box，布局尽量往这方面想。浏览器布局的基本元素是盒，在w3c的标准模式下，width=width，但是在怪异模式下，width=border2+padding2+width;其中后代元素的width：100%；参照的是右边的那个widt">
-<meta property="og:updated_time" content="2017-03-04T12:05:16.422Z">
+<meta property="og:description" content="一、html+css部分、（1）css盒模型，可能会要求手写一个布局，这个布局基本上用到的css是margin的负值，boxing-sizing：border-box，布局尽量往这方面想。浏览器布局的基本元素是盒，在w3c的标准模式下，width=width，但是在怪异模式下，width=border2+padding2+width;其中后代元素的width：100%；参照的是右边的那个width">
+<meta property="og:updated_time" content="2017-03-04T12:47:57.176Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端面试知识点总结">
-<meta name="twitter:description" content="一、html+css部分、
-（1）css盒模型，可能会要求手写一个布局，这个布局基本上用到的css是margin的负值，boxing-sizing：border-box，布局尽量往这方面想。浏览器布局的基本元素是盒，在w3c的标准模式下，width=width，但是在怪异模式下，width=border2+padding2+width;其中后代元素的width：100%；参照的是右边的那个widt">
+<meta name="twitter:description" content="一、html+css部分、（1）css盒模型，可能会要求手写一个布局，这个布局基本上用到的css是margin的负值，boxing-sizing：border-box，布局尽量往这方面想。浏览器布局的基本元素是盒，在w3c的标准模式下，width=width，但是在怪异模式下，width=border2+padding2+width;其中后代元素的width：100%；参照的是右边的那个width">
   
     <link rel="alternative" href="/atom.xml" title="未见莫名几许" type="application/atom+xml">
   
@@ -182,8 +179,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>一、html+css部分、</p>
-<p>（1）css盒模型，可能会要求手写一个布局，这个布局基本上用到的css是margin的负值，boxing-sizing：border-box，布局尽量往这方面想。浏览器布局的基本元素是盒，在w3c的标准模式下，width=width，但是在怪异模式下，width=border<em>2+padding</em>2+width;其中后代元素的width：100%；参照的是右边的那个width，</p>
+        <h2 id="一、html-css部分、"><a href="#一、html-css部分、" class="headerlink" title="一、html+css部分、"></a>一、html+css部分、</h2><p>（1）css盒模型，可能会要求手写一个布局，这个布局基本上用到的css是margin的负值，boxing-sizing：border-box，布局尽量往这方面想。浏览器布局的基本元素是盒，在w3c的标准模式下，width=width，但是在怪异模式下，width=border<em>2+padding</em>2+width;其中后代元素的width：100%；参照的是右边的那个width，</p>
 <p>（2）html5的新特性</p>
 <p>1、标签语义化，比如header，footer，nav，aside，article，section等，新增了很多表单元素，入email，url等，除去了center等样式标签，还有除去了有性能问题的frame，frameset等标签<br><a id="more"></a><br>2、音视频元素，video，audio的增加使得我们不需要在依赖外部的插件就可以往网页中加入音视频元素。</p>
 <p>3、新增很多api，比如获取用户地理位置的window.navigator.geoloaction，</p>
@@ -215,8 +211,7 @@ FALLBACK
 <p>（7）重构、回流</p>
 <p>浏览器的重构指的是改变每个元素外观时所触发的浏览器行为，比如颜色，背景等样式发生了改变而进行的重新构造新外观的过程。重构不会引发页面的重新布局，不一定伴随着回流，</p>
 <p>回流指的是浏览器为了重新渲染页面的需要而进行的重新计算元素的几何大小和位置的，他的开销是非常大的，回流可以理解为渲染树需要重新进行计算，一般最好触发元素的重构，避免元素的回流；比如通过通过添加类来添加css样式，而不是直接在DOM上设置，当需要操作某一块元素时候，最好使其脱离文档流，这样就不会引起回流了，比如设置position：absolute或者fixed，或者display：none，等操作结束后在显示。</p>
-<p>二、JavaScript部分</p>
-<p>（1）JavaScript的数据类型</p>
+<h2 id="二、JavaScript部分"><a href="#二、JavaScript部分" class="headerlink" title="二、JavaScript部分"></a>二、JavaScript部分</h2><p>（1）JavaScript的数据类型</p>
 <p>基本数据类型：Number，String，Boolean，Undefined，Null</p>
 <p>复杂数据类型：Object，Array，Function，RegExp，Date，Error</p>
 <p>全局数据类型：Math</p>
@@ -310,8 +305,7 @@ FALLBACK
 </blockquote>
 <p>事件委托指的是，不再事件的发生地设立监听函数，而是在事件发生地的父元素或者祖先元素设置监听器函数，这样可以大大提高性能，因为可以减少绑定事件的元素，比如：</p>
 <p>&lt;ul&gt;<br> &lt;li&gt;&lt;/li&gt;<br> &lt;li&gt;&lt;/li&gt;<br> &lt;li&gt;&lt;/li&gt;<br>&lt;/ul&gt;<br>要给li元素绑定click事件，使用事件委托机制的话，就只需要给ul绑定click事件就行了，这样就不需要给每个li’绑定click事件，减小内存占用，提高效率，有兴趣的童鞋可以去看看jQuery的live，bind，on，delegate函数的区别，这几个函数就采用了事件委托机制。</p>
-<p>三、其他部分</p>
-<p>（1）http状态码</p>
+<h2 id="三、其他部分"><a href="#三、其他部分" class="headerlink" title="三、其他部分"></a>三、其他部分</h2><p>（1）http状态码</p>
 <p>http状态码是表示服务器对请求的响应状态，主要分为以下几个部分</p>
 <p>1**：这类响应是临时响应，只包含状态行和某些可选的响应头信息，并以空行结束</p>
 <p>2**：表示请求成功，</p>
