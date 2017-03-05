@@ -6,26 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Vue.js为什么不支持templateUrl模式 | 未见莫名几许</title>
+  <title>Vue.js为什么不支持templateUrl模式 | 未见莫名几许--做一个有梦想的程序员</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="这篇文章是翻译的Vue.js的官方blog，最后加了些自己的理解。
-原文地址：Why Vue.js doesn’t support templateURL  很多Vue的新手，特别是使用过Angular的都会问“我能不能用 templateURL”,由于回答了太多次了，所以作者决定记下来。
-  Angular的世界里，templateURL 或者 ng-include 允许使用者在运行时动态的加">
+原文地址：Why Vue.js doesn’t support templateURL  很多Vue的新手，特别是使用过Angular的都会问“我能不能用 templateURL”,由于回答了太多次了，所以作者决定记下来。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Vue.js为什么不支持templateUrl模式">
 <meta property="og:url" content="http://yoursite.com/2015/07/18/vue/index.html">
-<meta property="og:site_name" content="未见莫名几许">
+<meta property="og:site_name" content="未见莫名几许--做一个有梦想的程序员">
 <meta property="og:description" content="这篇文章是翻译的Vue.js的官方blog，最后加了些自己的理解。
-原文地址：Why Vue.js doesn’t support templateURL  很多Vue的新手，特别是使用过Angular的都会问“我能不能用 templateURL”,由于回答了太多次了，所以作者决定记下来。
-  Angular的世界里，templateURL 或者 ng-include 允许使用者在运行时动态的加">
-<meta property="og:updated_time" content="2017-03-04T12:48:54.243Z">
+原文地址：Why Vue.js doesn’t support templateURL  很多Vue的新手，特别是使用过Angular的都会问“我能不能用 templateURL”,由于回答了太多次了，所以作者决定记下来。">
+<meta property="og:updated_time" content="2017-03-05T14:47:21.363Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Vue.js为什么不支持templateUrl模式">
 <meta name="twitter:description" content="这篇文章是翻译的Vue.js的官方blog，最后加了些自己的理解。
-原文地址：Why Vue.js doesn’t support templateURL  很多Vue的新手，特别是使用过Angular的都会问“我能不能用 templateURL”,由于回答了太多次了，所以作者决定记下来。
-  Angular的世界里，templateURL 或者 ng-include 允许使用者在运行时动态的加">
+原文地址：Why Vue.js doesn’t support templateURL  很多Vue的新手，特别是使用过Angular的都会问“我能不能用 templateURL”,由于回答了太多次了，所以作者决定记下来。">
   
-    <link rel="alternative" href="/atom.xml" title="未见莫名几许" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="未见莫名几许--做一个有梦想的程序员" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
@@ -187,7 +184,8 @@
       
         <p> 这篇文章是翻译的Vue.js的官方blog，最后加了些自己的理解。</p>
 <h6 id="原文地址：Why-Vue-js-doesn’t-support-templateURL"><a href="#原文地址：Why-Vue-js-doesn’t-support-templateURL" class="headerlink" title="原文地址：Why Vue.js doesn’t support templateURL"></a><em>原文地址：<a href="https://vuejs.org/2015/10/28/why-no-template-url/" target="_blank" rel="external">Why Vue.js doesn’t support templateURL</a></em></h6><p>  很多Vue的新手，特别是使用过<strong>Angular</strong>的都会问“我能不能用 <strong>templateURL</strong>”,由于回答了太多次了，所以作者决定记下来。</p>
-<p>  <strong>Angular</strong>的世界里，<strong>templateURL</strong> 或者 ng-include 允许使用者在运行时动态的加载远程模板文件，这个看起来很方便，作为一个自带功能，但是让我们来重新审视下这个功能。<br><a id="more"></a><br>  首先，它允许我们能够编写一个分离的html文件作为模板，这样子我们就能在编辑的时候看到正确的语法高亮，这也是很多开发者喜欢的原因（注：我觉得这是因为现在的人越来越懒，越来越依赖IDE的原因）。但是分离你的js和html代码真的是个好主意么？在Vue.js的组件中，js和html天然紧耦合，事实上，这些代码在一个文件更简单易懂。在2个文件中来回切换上下文逻辑实际上让开发者更不爽。在vue的概念里，组件才是vue.js的基本构建单位，并不是模板文件。每一个vue.js的模板都伴随着他的好基友js，分离他们太过于残忍了。</p>
+<a id="more"></a>
+<p>  <strong>Angular</strong>的世界里，<strong>templateURL</strong> 或者 ng-include 允许使用者在运行时动态的加载远程模板文件，这个看起来很方便，作为一个自带功能，但是让我们来重新审视下这个功能。<br><!--more--><br>  首先，它允许我们能够编写一个分离的html文件作为模板，这样子我们就能在编辑的时候看到正确的语法高亮，这也是很多开发者喜欢的原因（注：我觉得这是因为现在的人越来越懒，越来越依赖IDE的原因）。但是分离你的js和html代码真的是个好主意么？在Vue.js的组件中，js和html天然紧耦合，事实上，这些代码在一个文件更简单易懂。在2个文件中来回切换上下文逻辑实际上让开发者更不爽。在vue的概念里，组件才是vue.js的基本构建单位，并不是模板文件。每一个vue.js的模板都伴随着他的好基友js，分离他们太过于残忍了。</p>
 <p>  其次，因为<strong>templateURL</strong>是在运行时通过ajax的方式加载模板，不需要构建步骤为了你分离的文件。开发的时候，这很爽，但是上线部署的时候，你就麻烦了。在HTTP2.0没有大面积支持前，HTTP的请求数仍然是页面加载的最关键因素。想象一下，在你的网站中，每个组件都是用<strong>templateURL</strong>，那么页面出来前，你可能需要加载几十个HTTP请求。可能你并不知道，大多数的浏览器是限制同一域名的并发请求数量的。当你超过这个限额的时候，你页面的初始渲染时间就得等待每次请求的返回。当然，有工具可以帮助你提前注册你所有的模板，但是这就多了一个构建步骤，事实上，这就是大型网站的必然趋势。</p>
 <p>  那么，在没有<strong>templateURL</strong>的情况下，我们怎么处理开发环境问题呢？<br>  在js里面拼接字符串是很烂的做法，使用 <code>&lt;script type=&quot;x/template&quot;&gt;</code>这种伪模板也不咋样。那么，现在是时候提升技能，使用像<a href="http://webpack.github.io/" target="_blank" rel="external">Webpack</a>或者<a href="http://browserify.org/" target="_blank" rel="external">Browserify</a>这种流行的模块构建器了。如果以前没有使用过，可能有点望而却步，但是相信我，这会有一个质的飞跃。对于大型网站和系统来说，适当的模块化很必要。更重要的是，你可以编写Vue组件在一个文件中，再加上语法高亮，自定义的预处理器，热加载，ES6，内置css，自动前置。可以让开发者提高10倍效率。</p>
 <p>  最后，Vue还能懒加载你的组件，加上使用<a href="http://webpack.github.io/" target="_blank" rel="external">wabpack</a>非常容易，尽管这是为了解决一个问—构建页面文件过于庞大，初始化比较慢，所以你最好还是分割开来比较好。</p>
@@ -303,8 +301,8 @@
     </a>
   
   
-    <a href="/2015/07/18/model3/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">JavaScript 模块化入门Ⅰ：理解模块</div>
+    <a href="/2015/07/18/angular/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Angular路由的定义和使用</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -456,27 +454,11 @@
         <ul class="search-ul">
           
             <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接1</a>
+              <a href="http://yunkus.com/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>云库网</a>
             </li>
           
             <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接2</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接3</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接4</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接5</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接6</a>
+              <a href="http://zhaoxixiong.com/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>朝夕熊</a>
             </li>
           
         </ul>

@@ -6,29 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>JavaScript 模块化入门Ⅰ：理解模块 | 未见莫名几许</title>
+  <title>JavaScript 模块化入门Ⅰ：理解模块 | 未见莫名几许--做一个有梦想的程序员</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="原文链接：JavaScript Modules: A Beginner’s Guide 作者：Preethi Kasireddy
-作为一名JS初学者。假如你听到了一些诸如“模块化构建&amp;amp;模块化载入” “Webpack&amp;amp;Browserify” 或者 “AMD&amp;amp;CMD”之类的术语，肯定瞬间就凌乱了。
-JavaScript的模块化听起来挺深奥，可其实理解它对开发者来说特别实用。
-在">
+  <meta name="description" content="原文链接：JavaScript Modules: A Beginner’s Guide 作者：Preethi Kasireddy">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript 模块化入门Ⅰ：理解模块">
 <meta property="og:url" content="http://yoursite.com/2015/07/18/model3/index.html">
-<meta property="og:site_name" content="未见莫名几许">
-<meta property="og:description" content="原文链接：JavaScript Modules: A Beginner’s Guide 作者：Preethi Kasireddy
-作为一名JS初学者。假如你听到了一些诸如“模块化构建&amp;amp;模块化载入” “Webpack&amp;amp;Browserify” 或者 “AMD&amp;amp;CMD”之类的术语，肯定瞬间就凌乱了。
-JavaScript的模块化听起来挺深奥，可其实理解它对开发者来说特别实用。
-在">
-<meta property="og:updated_time" content="2017-03-04T12:41:34.366Z">
+<meta property="og:site_name" content="未见莫名几许--做一个有梦想的程序员">
+<meta property="og:description" content="原文链接：JavaScript Modules: A Beginner’s Guide 作者：Preethi Kasireddy">
+<meta property="og:updated_time" content="2017-03-05T14:47:23.770Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript 模块化入门Ⅰ：理解模块">
-<meta name="twitter:description" content="原文链接：JavaScript Modules: A Beginner’s Guide 作者：Preethi Kasireddy
-作为一名JS初学者。假如你听到了一些诸如“模块化构建&amp;amp;模块化载入” “Webpack&amp;amp;Browserify” 或者 “AMD&amp;amp;CMD”之类的术语，肯定瞬间就凌乱了。
-JavaScript的模块化听起来挺深奥，可其实理解它对开发者来说特别实用。
-在">
+<meta name="twitter:description" content="原文链接：JavaScript Modules: A Beginner’s Guide 作者：Preethi Kasireddy">
   
-    <link rel="alternative" href="/atom.xml" title="未见莫名几许" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="未见莫名几许--做一个有梦想的程序员" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
@@ -188,10 +179,10 @@ JavaScript的模块化听起来挺深奥，可其实理解它对开发者来说�
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>原文链接：<a href="http://link.zhihu.com/?target=https%3A//medium.freecodecamp.com/javascript-modules-a-beginner-s-guide-783f7d7a5fcc" target="_blank" rel="external">JavaScript Modules: A Beginner’s Guide</a> 作者：<a href="http://link.zhihu.com/?target=https%3A//medium.freecodecamp.com/%40preethikasireddy" target="_blank" rel="external">Preethi Kasireddy</a></p>
+        <p>原文链接：<a href="http://link.zhihu.com/?target=https%3A//medium.freecodecamp.com/javascript-modules-a-beginner-s-guide-783f7d7a5fcc" target="_blank" rel="external">JavaScript Modules: A Beginner’s Guide</a> 作者：<a href="http://link.zhihu.com/?target=https%3A//medium.freecodecamp.com/%40preethikasireddy" target="_blank" rel="external">Preethi Kasireddy</a><br><a id="more"></a></p>
 <p>作为一名JS初学者。假如你听到了一些诸如“模块化构建&amp;模块化载入” “Webpack&amp;Browserify” 或者 “AMD&amp;CMD”之类的术语，肯定瞬间就凌乱了。</p>
 <p>JavaScript的模块化听起来挺深奥，可其实理解它对开发者来说特别实用。</p>
-<p>在这篇文章里，我会尽量深入浅出地把这些深奥的术语翻译成浅显易懂的人话（加上一些代码示例）。希望你多少能从中学到点东西。<br><a id="more"></a><br>为了避免长篇大论，整个内容会分为两篇文章，这是第一部分，主要介绍模块化是什么，为什么要使用模块。之后的第二部分会介绍如何打包JS模块，以及各类构建工具。</p>
+<p>在这篇文章里，我会尽量深入浅出地把这些深奥的术语翻译成浅显易懂的人话（加上一些代码示例）。希望你多少能从中学到点东西。<br><!-- more --><br>为了避免长篇大论，整个内容会分为两篇文章，这是第一部分，主要介绍模块化是什么，为什么要使用模块。之后的第二部分会介绍如何打包JS模块，以及各类构建工具。</p>
 <h2 id="求解释到底什么是模块化"><a href="#求解释到底什么是模块化" class="headerlink" title="求解释到底什么是模块化"></a>求解释到底什么是模块化</h2><p>称职的作家会把他的书分章节和段落；好的程序员会把他的代码分成模块。</p>
 <p>就好像书籍的一章，模块仅仅是一坨代码而已。</p>
 <p>好的代码模块分割的内容一定是很合理的，便于你增加减少或者修改功能，同时又不会影响整个系统。</p>
@@ -363,18 +354,9 @@ JavaScript的模块化听起来挺深奥，可其实理解它对开发者来说�
   
 <nav id="article-nav">
   
-    <a href="/2015/07/18/vue/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Vue.js为什么不支持templateUrl模式
-        
-      </div>
-    </a>
   
-  
-    <a href="/2015/07/18/webpack/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Webpack傻瓜式指南</div>
+    <a href="/2015/07/18/less6/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">浅谈css的预编译---less语言</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -526,27 +508,11 @@ JavaScript的模块化听起来挺深奥，可其实理解它对开发者来说�
         <ul class="search-ul">
           
             <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接1</a>
+              <a href="http://yunkus.com/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>云库网</a>
             </li>
           
             <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接2</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接3</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接4</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接5</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接6</a>
+              <a href="http://zhaoxixiong.com/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>朝夕熊</a>
             </li>
           
         </ul>
