@@ -6,17 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2015/7 | 未见莫名几许--做一个有梦想的程序员</title>
+  <title>JavaScript 变量 | 未见莫名几许--做一个有梦想的程序员</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="I think， therefore I am">
-<meta property="og:type" content="website">
-<meta property="og:title" content="未见莫名几许--做一个有梦想的程序员">
-<meta property="og:url" content="http://yoursite.com/archives/2015/07/index.html">
+  <meta name="description" content="什么是变量变量就是用来存放数据的容器。
+变量命名法变量命名是区分大小写的，并且不允许使用 JavaScript 的关键字和保留字做变量名。所有变量的命名法都是基于上面两条命名原则的。
+匈牙利命名法通过在变量名前面添加相应小写字母作为前缀标示变量的作用域或类型等。前缀后面是一个或多个单词的组合，单词描述了变量的用途，比如g表示全局变量，l表示局部变量。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript 变量">
+<meta property="og:url" content="http://yoursite.com/2015/02/21/js8/index.html">
 <meta property="og:site_name" content="未见莫名几许--做一个有梦想的程序员">
-<meta property="og:description" content="I think， therefore I am">
+<meta property="og:description" content="什么是变量变量就是用来存放数据的容器。
+变量命名法变量命名是区分大小写的，并且不允许使用 JavaScript 的关键字和保留字做变量名。所有变量的命名法都是基于上面两条命名原则的。
+匈牙利命名法通过在变量名前面添加相应小写字母作为前缀标示变量的作用域或类型等。前缀后面是一个或多个单词的组合，单词描述了变量的用途，比如g表示全局变量，l表示局部变量。">
+<meta property="og:updated_time" content="2017-03-08T03:08:45.906Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="未见莫名几许--做一个有梦想的程序员">
-<meta name="twitter:description" content="I think， therefore I am">
+<meta name="twitter:title" content="JavaScript 变量">
+<meta name="twitter:description" content="什么是变量变量就是用来存放数据的容器。
+变量命名法变量命名是区分大小写的，并且不允许使用 JavaScript 的关键字和保留字做变量名。所有变量的命名法都是基于上面两条命名原则的。
+匈牙利命名法通过在变量名前面添加相应小写字母作为前缀标示变量的作用域或类型等。前缀后面是一个或多个单词的组合，单词描述了变量的用途，比如g表示全局变量，l表示局部变量。">
   
     <link rel="alternative" href="/atom.xml" title="未见莫名几许--做一个有梦想的程序员" type="application/atom+xml">
   
@@ -158,103 +165,201 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-js8" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      JavaScript 变量
+    </h1>
+  
+
+        
+        <a href="/2015/02/21/js8/" class="archive-article-date">
+  	<time datetime="2015-02-20T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-02-21</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>什么是变量<br>变量就是用来存放数据的容器。</p>
+<p>变量命名法<br>变量命名是区分大小写的，并且不允许使用 JavaScript 的关键字和保留字做变量名。所有变量的命名法都是基于上面两条命名原则的。</p>
+<p>匈牙利命名法<br>通过在变量名前面添加相应小写字母作为前缀标示变量的作用域或类型等。前缀后面是一个或多个单词的组合，单词描述了变量的用途，比如g表示全局变量，l表示局部变量。<br><a id="more"></a></p>
+<blockquote>
+<p>&lt;script&gt;<br>var gGoodWebsite = “云库网”;<br>function varFn(){<br>    var lWebsiteAddress = “yunkus.com”;<br>    console.log(lWebsiteAddress);<br>}<br>&lt;/script&gt;</p>
+</blockquote>
+<p>骆驼式/驼峰命名法<br>混合使用大小写字母来组合而成的变量名。</p>
+<blockquote>
+<p>&lt;script&gt;<br>//格式一：<br>var goodWebsite = “云库网”;<br>var websiteAddress = “yunkus.com”;<br>//格式二：<br>var good_website = “云库网”;<br>var website_address = “yunkus.com”;<br>&lt;/script&gt;</p>
+</blockquote>
+<p>帕斯卡使命名法<br>这个跟驼峰命名法类似，只不过驼峰的第一个单词首字母小写，而帕斯卡命名法第一个单词首字母也大写。</p>
+<blockquote>
+<p>lt;script&gt;<br>var GoodWebsite = “云库网”;<br>var WebsiteAddress = “yunkus.com”;<br>&lt;/script&gt;</p>
+</blockquote>
+<p>变量存放的数据类型<br>基本数据类型有5种：string（字符串）、number（数字）、boolean（布尔）、Null、Undefined。<br>引用类型数据1种：object（对象）</p>
+<p>string 类型：存储字符（比如 “Bill Gates”）的变量。<br>number 类型：数字可以带小数点，也可以不带。<br>boolean 类型：布尔（逻辑）只能有两个值：true 或 false。<br>undefined 类型：声明但未初始化,且其默认初始化值为 undefined。<br>null 类型：默认值是null，从逻辑角度讲，是表示一个空对象指针。<br>object 类型：可通过 new Object()来创建一个对象。<br>因为 JavaScript 拥有动态类型，所以你可以通过var 来保存前面提到的6种数据类型。在 JavaScript 中引用数据类型是保存在堆内存中的对象，这些对象不可以直接被访问的，只能通过操作存放在栈内存中的地址来查询在堆内存中的对象，即我们保存在变量中的值。</p>
+<p>数据类型的检测<br>typeof<br>typeof 是一个一元运算，放在一个运算数之前，运算数可以是任意类型。它的返回值是一个字符串，该字符串说明运算数的类型。结果为string，number，boolean，undefined，function，object中的一种。</p>
+<blockquote>
+<p>&lt;script&gt;<br>var iString = “云库网”;<br>var iNumber = 666;<br>var iBoolean = true;<br>var iNull = null;<br>var iUndefined;<br>var iObject = new Object();<br>var iFn = function(){};<br>console.log(typeof iString); // string<br>console.log(typeof iNumber); // number<br>console.log(typeof iBoolean); // boolean<br>console.log(typeof iNull); // object<br>console.log(typeof iUndefined); // undefined<br>console.log(typeof iObject); // object<br>console.log(typeof iFn); // function<br>&lt;/script&gt;</p>
+</blockquote>
+<p>这里需要注意的是：iNull 和 iObject 都返回 object 。因为null 表示的是一个空对象指针，所以 iNull 返回的就是一个对象。有意思的事请看下面：</p>
+<blockquote>
+<p>&lt;script&gt;<br>// 依然使用上面声明的变量，打印 iNull 和 iUndifined 的对比结果<br>console.log(iNull == iUndifined); //true<br>&lt;/script&gt;</p>
+</blockquote>
+<p>竟然是 true，原来 undifined 值派生自null 值 。虽然是这样，但在平常使用中，他们还是有点不同，比如你要声明一个未定义的变量不用显式地给变量赋值undifined，只需要var str;而给变量声明null时，就必需显式地赋值，如：var obj = null;null的作用：1.告诉 JavaScript 引擎 obj 是一个用于保存对象的变量; 2.告诉 JavaScript 引擎垃圾回收机制这个变量可回收。</p>
+<p>instanceof<br>instanceof 用于判断一个变量是否是某个对象的实例。它返回的是 true 或者 false 。</p>
+<blockquote>
+<p>&lt;script&gt;<br>var iString = new String();<br>var iNumber = new Number();<br>var iBoolean = new Boolean();<br>var iObject = new Object();<br>var iFn = new Function();<br>console.log(iString instanceof String); // ture<br>console.log(iNumber instanceof Number); // ture<br>console.log(iBoolean instanceof Boolean); // ture<br>console.log(iObject instanceof Object); // ture<br>console.log(iFn instanceof Function); // ture<br>&lt;/script&gt;</p>
+</blockquote>
+<p>但是如果你像下面这样初始化这些变量，那么instanceof 就会返回 false</p>
+<blockquote>
+<p>&lt;script&gt;<br>var iString = “云库网”;<br>var iNumber = 666;<br>var iBoolean = true;<br>var iObject = new Object();<br>var iFn = function(){}<br>console.log(iString instanceof String); // false<br>console.log(iNumber instanceof Number); // false<br>console.log(iBoolean instanceof Boolean); // false<br>console.log(iObject instanceof Object); // ture<br>console.log(iFn instanceof Function); // ture<br>&lt;/script&gt;</p>
+</blockquote>
+<p>这是为什么呢？原来 instanceof 运算符是用来测试一个对象在其原型链中是否存在一个构造函数的 prototype 属性。所以我们要通过下面这样创建变量，instanceof 才会返回 true：</p>
+<blockquote>
+<p>&lt;script&gt;<br>var iString = new String(“云库网”);<br>var iNumber = new Number(666);<br>var iBoolean = new Boolean(true);<br>var iObject = new Object();<br>var iFn = new Function();<br>console.log(iString instanceof String); // ture<br>console.log(iNumber instanceof Number); // ture<br>console.log(iBoolean instanceof Boolean); // ture<br>console.log(iObject instanceof Object); // ture<br>console.log(iFn instanceof Function); // ture<br>//控制台打印 iString 的值<br>console.log(iString); //String {0: “云”, 1: “库”, 2: “网”, length: 3, [[PrimitiveValue]]: “云库网”}<br>// 弹出iString的值<br>alert(iString); // 云库网<br>&lt;/script&gt;<br>但是这里有一个很有意思的现象，那就是控制台打印出来的 iString 结果是这样的：String {0: “云”, 1: “库”, 2: “网”, length: 3, [[PrimitiveValue]]: “云库网”}，并且你可以通过 iString[0]、 iString[1]、 iString[2] 来获取对应的值。</p>
+</blockquote>
+<p>变量声明及初始化<br>声明多个变量<br>同时声明初始化多个变量的写法：</p>
+<blockquote>
+<p>&lt;script&gt;<br>// 分开声明<br>var a = “云库网”;<br>var b = [“云库网”,”yunkus.com”];<br>var c = {name:”云库网”,value:”<a href="http://yunkus.com&quot;}" target="_blank" rel="external">http://yunkus.com&quot;}</a>;<br>// 单 var 声明<br>var a = “云库网”, b = [“云库网”,”yunkus.com”], c = {name:”云库网”,value:”<a href="http://yunkus.com&quot;}" target="_blank" rel="external">http://yunkus.com&quot;}</a>;<br>你只需要记住 var 开头，变量之间用 , 隔开，最后别忘了加 ; 。</p>
+</blockquote>
+<p>声明但未初始化<br>像这种例子就是考验你对 JavaScipt 的理解程度了。不过也不用着急，看完本例子后，你应该会明白。</p>
+<blockquote>
+<p>&lt;script&gt;<br>// 声明但未初始化变量<br>var a;<br>console.log(a); // undefined<br>// 使用未声明的变量<br>console.log(b); // Uncaught ReferenceError: b is not defined<br>&lt;/script&gt;<br>声明但未初始化变量跟未定义变量最大的不同就是声明但未初始化时，不会影响到后以的程序执行，而直接使用未定义的的就是，则会报错，并且后续的程序都没法继续执行。</p>
+</blockquote>
+<p>下面还有一个挺不错的例子：</p>
+<blockquote>
+<p>&lt;script&gt;<br>console.log(“我是第一个：” + a); // 我是第一个：undefined<br>var a;<br>console.log(“我是第二个：” + a); // 我是第二个：undefined<br>var a = “云库网”;<br>console.log(“我是第三个：” + a); // 我是第三个：云库网<br>&lt;/script&gt;</p>
+</blockquote>
+<p>为什么第一个打印出来的结果跟第二个打印出来的结果是一样的，在第一个之前 a 不是还没定义吗？你只需要记得一点就可以，在 JavaScript 引擎中对代码的处理可分为为两个阶段：预编译期(预处理)与执行期。预编译期JS会对本代码块中的所有声明的变量和函数进行处理，但需要注意的是此时处理函数的只是声明式函数，而且变量也只是进行了声明但未进行初始化以及赋值。只有等到函数执行了才会给变量赋值，也就是说JavaScript 引擎会先过一遍程序 ，把程序里的变量和函数都声明好，等到第二次（从上往下执行）时，才会依次（从上往下）给变量和函数赋值并执行相应函数。代码中还有一个地方需要引起你的注意的，重复声明变量 a ，那 JavaScript 引擎是怎么处理这种情况的呢？优先声明原则，也就是如果你前面已经声明了变量，那么后面如果又重复声明了，就会把后面声明的变量直接忽略掉 var 声明，但执行时还是会把 var a = “云库网” 这个字符串赋值给第一个变量 a 的。</p>
+<p>下面还有一个更加经典的例子：</p>
+<blockquote>
+<p>&lt;script&gt;<br>var a1 = “JavaScript”;<br>var a2 = “jQuery”;<br>function fn1(){<br>    console.log(a1);<br>    a1 = “HTML5”;<br>    console.log(a1);<br>}<br>function fn2(){<br>   console.log(a2);<br>   var a2 = “CSS3”;<br>   console.log(a2);<br>}<br>fn1();<br>fn2();<br>&lt;/script&gt;</p>
+</blockquote>
+<p>它们分别都会输出什么呢？你先在脑子里过一遍，然后运行代码来对下比浏览器打印出来的结果是不是跟你想象中的一样？</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/weixin.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2015" class="archive-year">2015</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2015/07/18/webpack/" class="archive-article-date">
-  	<time datetime="2015-07-17T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-07-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/07/18/webpack/">Webpack傻瓜式指南</a>
-    </h1>
-  
+      
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2015/02/21/js8/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2015/07/13/propority/" class="archive-article-date">
-  	<time datetime="2015-07-12T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-07-13</time>
-</a>
-        </div>
-    	 
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/07/13/propority/">JavaScript 作用域和作用域链</a>
-    </h1>
+    <a href="/2015/03/11/less6/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          浅谈css的预编译---less语言
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+
+
+
+
+
+  
+    <div class="duoshuo"></div>
   
 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2015/07/13/weixin7/" class="archive-article-date">
-  	<time datetime="2015-07-12T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-07-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/07/13/weixin7/">前端工程师如何快速的开发一个微信JSSDK应用？</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -277,8 +382,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
