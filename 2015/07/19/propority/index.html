@@ -6,17 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2016/9 | 未见莫名几许--做一个有梦想的程序员</title>
+  <title>JavaScript 作用域和作用域链 | 未见莫名几许--做一个有梦想的程序员</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="I think， therefore I am">
-<meta property="og:type" content="website">
-<meta property="og:title" content="未见莫名几许--做一个有梦想的程序员">
-<meta property="og:url" content="http://yoursite.com/archives/2016/09/index.html">
+  <meta name="description" content="作用域就是变量或者函数可访问的范围，它分为全局作用域和本地作用域。全局作用域：所有属于浏览器 window 对象的变量或者函数都归属于全局作用域。本地作用域：以函数为边界的区块，也可以理解成除了全局作用域，其它的都可以看作是局部作用域，而全局作用域和本地作用域就组成了一条作用域链。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript 作用域和作用域链">
+<meta property="og:url" content="http://yoursite.com/2015/07/19/propority/index.html">
 <meta property="og:site_name" content="未见莫名几许--做一个有梦想的程序员">
-<meta property="og:description" content="I think， therefore I am">
+<meta property="og:description" content="作用域就是变量或者函数可访问的范围，它分为全局作用域和本地作用域。全局作用域：所有属于浏览器 window 对象的变量或者函数都归属于全局作用域。本地作用域：以函数为边界的区块，也可以理解成除了全局作用域，其它的都可以看作是局部作用域，而全局作用域和本地作用域就组成了一条作用域链。">
+<meta property="og:image" content="http://yunkus.com/wp-content/uploads/2017/02/javascript-scope-and-scope-chain-1.jpg">
+<meta property="og:image" content="http://yunkus.com/wp-content/uploads/2017/02/javascript-scope-and-scope-chain-2.jpg">
+<meta property="og:updated_time" content="2017-03-08T03:19:41.486Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="未见莫名几许--做一个有梦想的程序员">
-<meta name="twitter:description" content="I think， therefore I am">
+<meta name="twitter:title" content="JavaScript 作用域和作用域链">
+<meta name="twitter:description" content="作用域就是变量或者函数可访问的范围，它分为全局作用域和本地作用域。全局作用域：所有属于浏览器 window 对象的变量或者函数都归属于全局作用域。本地作用域：以函数为边界的区块，也可以理解成除了全局作用域，其它的都可以看作是局部作用域，而全局作用域和本地作用域就组成了一条作用域链。">
+<meta name="twitter:image" content="http://yunkus.com/wp-content/uploads/2017/02/javascript-scope-and-scope-chain-1.jpg">
   
     <link rel="alternative" href="/atom.xml" title="未见莫名几许--做一个有梦想的程序员" type="application/atom+xml">
   
@@ -158,49 +162,163 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-propority" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/09/13/css3/" class="archive-article-date">
-  	<time datetime="2016-09-12T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-09-13</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/09/13/css3/">Css3 和 H5 新特性</a>
+    <h1 class="article-title" itemprop="name">
+      JavaScript 作用域和作用域链
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
+        
+        <a href="/2015/07/19/propority/" class="archive-article-date">
+  	<time datetime="2015-07-18T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-07-19</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>作用域就是变量或者函数可访问的范围，它分为全局作用域和本地作用域。全局作用域：所有属于浏览器 window 对象的变量或者函数都归属于全局作用域。本地作用域：以函数为边界的区块，也可以理解成除了全局作用域，其它的都可以看作是局部作用域，而全局作用域和本地作用域就组成了一条作用域链。<br><a id="more"></a><br>我们可以看看下面这个例子来具体说明什么是全局作用域，什么是局部作用域：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">&amp;lt;script&amp;gt;</div><div class="line">// 定义全局变量</div><div class="line">var globleAttr = &quot;我是全局变量&quot;;</div><div class="line">// 定义全局函数 globleFnA</div><div class="line">function globleFnA()&#123;</div><div class="line">    console.log(&quot;我是一个全局函数&quot;);</div><div class="line">&#125;</div><div class="line">// 定义全局函数 globleFnB</div><div class="line">function globleFnB()&#123;</div><div class="line">    // 定义局部变量</div><div class="line">    var localAttr = &quot;我是局部变量&quot;;</div><div class="line">    // 定义局部函数</div><div class="line">    function localFn()&#123;</div><div class="line">        console.log(&quot;我是局部函数&quot;);</div><div class="line">    &#125;</div><div class="line">    // 调用全局函数 globleFnA</div><div class="line">    globleFnA();</div><div class="line">    // 在函数内打印变量</div><div class="line">    console.log(globleAttr);  // 结果：我是全局变量</div><div class="line">    console.log(localAttr); // 结果：我是局部变量</div><div class="line">&#125;</div><div class="line">// 在全局下打印变量</div><div class="line">console.log(localAttr); // 结果：localAttr is not defined（变量未定义）</div><div class="line">console.log(globleAttr); // 结果：我是全局变量</div><div class="line">// 在全局作用域中调用全局函数 globleFnA</div><div class="line">globleFnA(); // 结果：我是一个全局函数</div><div class="line">// 在全局作用域中调用全局函数 globleFnB</div><div class="line">globleFnB();</div><div class="line">// 在全局作用域中调用局部函数 localFn</div><div class="line">localFn(); // 结果：localFn is not defined（函数未定义）</div><div class="line">&amp;lt;/script&amp;gt;</div></pre></td></tr></table></figure></p>
+<p>运行代码后就会输出如代码行中注释中的结果。从上面的代码可以得出一个结论，局部作用域下的函数可以访问全局作用域中的变量和函数 ，而全局作用域里头的函数却无法访问本地作用域里的变量和函数，这就是作用域链在作怪。</p>
+<p>作用域链在 JavaScript 中是一个非常重要的概念。因为不管你用 JavaScript 实现何种功能，只要你是在用 JavaScript 写代码，你都时时刻刻跟作用域链打交道。说了那么多，作用域链究竟是个什么东西，又有什么用呢？下面我们还得花点笔墨来说说。</p>
+<p>我们都知道在 JavaScript 中一切皆对象，包括函数。函数里面放着可供代码访问的数据资源和只有 JavaScript 引擎才能访问的内部数据资源，其中一个就是 scope 属性，为什么要在这里提到 scope 属性，因为在函数执行的时候会把作用域链保存在 scope 上。当我们创建一个函数后，会创建一个包含全局变量对象的作用域链并保存在此函数内部的 scope 属性中。而当函数被执行时，会从 scope 中复制一份作为执行环境的作用域链，并且把活动对象（即此函数的变量对象）放到作用域链的最前端。</p>
+<p>我们也可以这样理解：正在执行的函数有一个属于自己的执行环境，这个执行环境对应着一个作用域链和一个活动对象。</p>
+<p>作用域链上挂着与当前执行函数有关的变量对象（有关的意思是指当前执行函数可能会用到的数据资源）。作用域链的最前端是活动对象，什么是活动对象可以往回看，其它变量对象按顺序从里往外依次排列，也就是说它是一个对象指针列表。当需要查询变量或者函数时（在这里我们假设要查询一个变量x），那么程序会先从活动对象查找，如果找到那就停止查找，如果在活动对象中没找到变量x，再往父级的变量对象查找，如果还没有找到，继续一层一层往上查询，直到查询到变量x为止，如果还是没找到，就会报“未定义”的错。我们可以简单的把作用域链理解成一本字典，用于查询相关的数据资源。</p>
+<p>从上面的字里行间我们可以得知作用域链的搜索是单向的，从最前端开始往外层作用域查询，这样一级一级往外冒，直到作用域链的最末端（全局作用域 的变量对象），这就是为什么外层函数无法访问内层函数数据资源的原因所在。</p>
+<p>我们就拿上面那段代码中的 globleFnB 函数作为作用域链的 demo。在讲解例子之前，我们需要再来看一个例子，就是当我们打开浏览器后会发生什么。</p>
+<p>当我们打开浏览器后，就会生成一个全局的执行环境，一条执行环境对应的作用域链和一个活动对象，这个执行环境属于 window 对象。这个执行环境只会在浏览器关闭后才会被销毁，这就是我们常常说的尽量不要把变量定义为全局变量的原因，如果有一个非常大的 JavaScript 程序，并且里面的所有变量函数都挂在 window 对象下，那么可能就会产生一定的性能问题，因为这些数据资源不会在函数执行完后销毁，而是一直占用着内存资源，只有当网页或者浏览器关闭后才会被销毁并释放内存空间。</p>
+<p>回到正题，当我们启动浏览器后就会创建一个这样全局环境，如图：<br><img src="http://yunkus.com/wp-content/uploads/2017/02/javascript-scope-and-scope-chain-1.jpg" alt=""><br>JavaScript 作用域和作用域链</p>
+<p>当我们的 globleFnB 函数执行时，会创建一个执行环境，一个活动对象，一个作用域链，而上面那个window 对象就变成了作用域链中的1号位置，当前执行环境总是排在第一位。如图：</p>
+<p>JavaScript 作用域和作用域链<br><img src="http://yunkus.com/wp-content/uploads/2017/02/javascript-scope-and-scope-chain-2.jpg" alt=""><br>需要注意的是，不管当前是哪一个函数正在执行，他的执行环境都会有一条属于自己的作用域链，当函数执行完后，活动对象里的数据资源都会被销毁。但也不总是这样，也有例外的情况，那就是在有闭包的代码中，是可以访问到局部变量的。</p>
 
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/weixin.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2015/07/19/propority/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2015/08/15/model3/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          JavaScript 模块化入门Ⅰ：理解模块
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2015/07/18/webpack/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Webpack傻瓜式指南</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+
+  
+    <div class="duoshuo"></div>
   
 
-    
+
 
 
           </div>
@@ -223,8 +341,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
